@@ -1,0 +1,113 @@
+.appointment-page {
+  min-height: 100vh;
+  padding-top: 110px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &__right {
+    border-radius: 20px;
+    background: white;
+    padding: 12px 24px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  &__date, &__time {
+    &__title {
+      @apply flex gap-2 font-medium text-[16px];
+
+
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    &__item {
+      display: flex;
+      flex: 25%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      background: #f5f6fa;
+      border: 1px solid #e5e9fb;
+      border-radius: 10px;
+      position: relative;
+      cursor: pointer;
+
+      $this: &;
+
+      &.active {
+        position: relative;
+        color: #fff;
+        // background: linear-gradient(to right, red, orange);
+        background: linear-gradient(115.17deg, #5de1e7 -18.74%, #2f75fe 91.51%);
+        background-clip: padding-box; /* !importanté */
+        border: none;
+        border-radius: 10px;
+
+        #{$this} {
+          &--date, &--time, &--text {
+            background: linear-gradient(
+              115.17deg,
+              #5de1e7 -18.74%,
+              #2f75fe 91.51%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          // z-index: 1;
+
+          margin: 1px; /* !importanté */
+          border-radius: 9px;
+          background: #f5f6fa;
+        }
+      }
+
+      &--date, &--time {
+        font-size: 16px;
+        color: #000;
+        font-weight: 600;
+        z-index: 2;
+      }
+
+      &--text {
+        font-size: 16px;
+        color: #868caa;
+        font-weight: 400;
+        z-index: 2;
+      }
+    }
+  }
+
+  &__time {
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__item {
+      min-height: 48px;
+    }
+  }
+
+  &__note {
+    font-size: 14px;
+  }
+}

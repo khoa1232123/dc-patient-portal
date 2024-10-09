@@ -5,6 +5,25 @@
   background-position: center center;
   background-repeat: no-repeat;
 
+  &__left {
+    &__title {
+      font-size: 78px;
+      font-weight: 400;
+      text-align: left;
+      color: white;
+    }
+
+    &__desc {
+      width: 332px;
+      height: 21px;
+      top: 297px;
+      left: 56px;
+      gap: 0px;
+      opacity: 0px;
+      color: white;
+    }
+  }
+
   &__right {
     border-radius: 20px;
     background: white;
@@ -17,11 +36,10 @@
     margin-bottom: 12px;
   }
 
-  &__date, &__time {
+  &__date,
+  &__time {
     &__title {
       @apply flex gap-2 font-medium text-[16px];
-
-
     }
 
     &__list {
@@ -55,7 +73,9 @@
         border-radius: 10px;
 
         #{$this} {
-          &--date, &--time, &--text {
+          &--date,
+          &--time,
+          &--text {
             background: linear-gradient(
               115.17deg,
               #5de1e7 -18.74%,
@@ -81,10 +101,11 @@
         }
       }
 
-      &--date, &--time {
+      &--date,
+      &--time {
         font-size: 16px;
         color: #000;
-        font-weight: 600;
+        font-weight: 500;
         z-index: 2;
       }
 

@@ -33,6 +33,7 @@ type Props = FormItemProps & {
     }
   ) => React.ReactNode;
   allowClear?: boolean;
+  variant?: "outlined" | "borderless" | "filled"
 };
 
 const SelectCustom = ({
@@ -45,6 +46,7 @@ const SelectCustom = ({
   options,
   optionRender,
   allowClear = false,
+  variant,
   ...restProps
 }: Props) => {
   return (
@@ -62,6 +64,7 @@ const SelectCustom = ({
         options={options}
         placeholder={placeholder}
         optionRender={optionRender}
+        variant={variant}
       />
     </FormItemCustom>
   );

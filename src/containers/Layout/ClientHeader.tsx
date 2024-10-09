@@ -46,7 +46,7 @@ const ClientHeader = (props: Props) => {
           </div>
         </div>
         <div className="client-header__btn">
-          <Button className="base-btn">Đăng nhập</Button>
+          <button className="base-btn">Đăng nhập</button>
         </div>
       </div>
     </Header>

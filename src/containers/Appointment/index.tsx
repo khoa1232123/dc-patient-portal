@@ -2,7 +2,7 @@
 import { appointmentBg } from "@/assets/images";
 import { CalendarBlueIcon, PlusGrayIcon, TimeBlueIcon } from "@/assets/svg";
 import { dataDate, dataTime } from "@/constants/dataExams";
-import { Col, Form, Input, Radio, Row, Select } from "antd";
+import { Button, Col, Form, Input, Radio, Row, Select } from "antd";
 import { useState } from "react";
 import { ClientFooter } from "../Layout";
 import { InputCustom, SelectCustom } from "@/components";
@@ -19,7 +19,10 @@ const Appointment = (props: Props) => {
     >
       <Row>
         <Col span={8}>
-          <div className="appointment-page__left"></div>
+          <div className="appointment-page__left">
+            <h1 className="appointment-page__left__title">Book local doctor who take your insurance</h1>
+            <p className="appointment-page__left__desc">Book local doctor who take your insurance</p>
+          </div>
         </Col>
         <Col span={16}>
           <div className="appointment-page__right">
@@ -174,13 +177,13 @@ const Appointment = (props: Props) => {
                 </Col>
                 <Col span={24}>
                   <Form.Item className="mb-0">
-                    <button className="base-btn !w-full">Đặt lịch khám</button>
+                    <Button className="base-btn !w-full">Đặt lịch khám</Button>
                   </Form.Item>
                 </Col>
               </Row>
             </Form>
           </div>
-          <ClientFooter />
+          <ClientFooter className="text-white" />
         </Col>
       </Row>
     </section>

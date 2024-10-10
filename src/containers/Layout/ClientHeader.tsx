@@ -20,11 +20,15 @@ const dataMenu = [
   },
 ];
 
-type Props = {};
+type Props = {
+  className?: string;
+};
 
-const ClientHeader = (props: Props) => {
+const ClientHeader = ({
+  className = "",
+}: Props) => {
   return (
-    <Header className="client-header !px-6">
+    <Header className={`client-header !px-6 ${className}`}>
       <div className="client-header__left">
         <Menu
           theme="dark"

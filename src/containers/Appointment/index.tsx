@@ -1,17 +1,61 @@
 "use client";
-import { appointmentBg } from "@/assets/images";
-import { CalendarBlueIcon, PlusGrayIcon, TimeBlueIcon } from "@/assets/svg";
-import { dataDate, dataTime } from "@/constants/dataExams";
-import { Button, Col, Form, Input, Radio, Row, Select } from "antd";
+import {
+  appointmentBg,
+  bgPartyImage,
+  doctor0Image,
+  iconPartyPopper,
+} from "@/assets/images";
+import {
+  CalendarBlueIcon,
+  CalendarBlueOutlineIcon,
+  HeartMedicalIcon,
+  MedicalKitIcon,
+  PlusGrayIcon,
+  TimeBlueIcon,
+  TimeBlueOutlineIcon,
+  UserColorIcon,
+} from "@/assets/svg";
+import { InputCustom, SelectCustom } from "@/components";
+import {
+  dataClinics,
+  dataDate,
+  dataDoctors,
+  dataHealthConditions,
+  dataMedicalSpecialties,
+  dataTime,
+} from "@/constants/dataExams";
+import { Button, Col, Form, Modal, Radio, Row } from "antd";
+import Image from "next/image";
 import { useState } from "react";
 import { ClientFooter } from "../Layout";
-import { InputCustom, SelectCustom } from "@/components";
+import SuggestionAI from "./SuggestionAI";
+import SelectSuggestAI from "./SelectSuggestAI";
+import AppSuccess from "./AppSuccess";
 
 type Props = {};
 
 const Appointment = (props: Props) => {
   const [dateSelected, setDateSelected] = useState<any>({ key: 1 });
   const [timeSelected, setTimeSelected] = useState<any>({ key: 1 });
+  const [dataForm, setDataForm] = useState<{ [key: string]: any }>({});
+  const [modalOpen, setModalOpen] = useState(true);
+  const [data, setData] = useState<{
+    clinic?: string;
+    date?: string;
+    time?: string;
+    doctor?: string;
+    healthCondition?: string;
+    specialty?: string;
+  }>({});
+
+  const [form] = Form.useForm();
+
+  const handleFinish = (values: any) => {
+    console.log({ values });
+    setModalOpen(true);
+    setData(values);
+  };
+
   return (
     <section
       className="appointment-page px-6"
@@ -20,13 +64,25 @@ const Appointment = (props: Props) => {
       <Row>
         <Col span={8}>
           <div className="appointment-page__left">
-            <h1 className="appointment-page__left__title">Book local doctor who take your insurance</h1>
-            <p className="appointment-page__left__desc">Book local doctor who take your insurance</p>
+            <h1 className="appointment-page__left__title">
+              Book local doctor who take your insurance
+            </h1>
+            <p className="appointment-page__left__desc">
+              Book local doctor who take your insurance
+            </p>
+            <div className="appointment-page__left__img">
+              <Image src={doctor0Image} alt="doctor0" />
+            </div>
           </div>
         </Col>
         <Col span={16}>
           <div className="appointment-page__right">
-            <Form layout="vertical">
+            <Form
+              layout="vertical"
+              form={form}
+              initialValues={dataForm}
+              onFinish={handleFinish}
+            >
               <Row gutter={22} className="gap-y-4">
                 <Col span={12}>
                   <h2 className="appointment-page__title">Thông tin khám</h2>
@@ -48,7 +104,11 @@ const Appointment = (props: Props) => {
                       />
                     </Col>
                     <Col span={24}>
-                      <Form.Item label="Giới tính" layout="horizontal">
+                      <Form.Item
+                        label="Giới tính"
+                        layout="horizontal"
+                        className="base-radio"
+                      >
                         <Radio.Group>
                           <Radio value={1}>Nam</Radio>
                           <Radio value={2}>Nữ</Radio>
@@ -60,47 +120,83 @@ const Appointment = (props: Props) => {
                         label="Lý do"
                         placeholder="Lý do"
                         name={"reason"}
+                        rules={[{ required: true, message: "" }]}
                       />
                     </Col>
                     <Col span={24}>
                       <SelectCustom
                         label="Triệu chứng/Tình trạng sức khoẻ"
-                        options={[{ value: "lucy", label: "Lucy" }]}
-                        placeholder="Chọn"
+                        options={dataHealthConditions}
+                        placeholder="Tìm kiếm nhanh triệu chứng"
                         rules={[{ required: true, message: "" }]}
                         allowClear
-                        name={"status"}
+                        name={"healthConditions"}
+                        onChange={(e) =>
+                          setDataForm({
+                            ...dataForm,
+                            healthConditions: e,
+                            specialty: "",
+                            doctor: "",
+                            specialtyAI: true,
+                          })
+                        }
                       />
                     </Col>
+                    {dataForm.healthConditions && (
+                      <Col span={24}>
+                        <SelectSuggestAI
+                          form={form}
+                          name="specialty"
+                          data={dataMedicalSpecialties}
+                          isOpenForm={dataForm.specialtyAI}
+                          infoSelect={{
+                            label: "Chuyên khoa",
+                            placeholder: "Chọn chuyên khoa",
+                          }}
+                          onChange={(e) => {
+                            setDataForm({
+                              ...dataForm,
+                              specialty: e,
+                              specialtyAI: false,
+                              doctorAI: true,
+                            });
+                          }}
+                        />
+                      </Col>
+                    )}
 
-                    <Col span={24}>
-                      <SelectCustom
-                        label="Chuyên khoa"
-                        options={[{ value: "lucy", label: "Lucy" }]}
-                        placeholder="Chọn"
-                        rules={[{ required: true, message: "" }]}
-                        allowClear
-                        name={"department"}
-                      />
-                    </Col>
-                    <Col span={24}>
-                      <SelectCustom
-                        label="Bác sĩ"
-                        options={[{ value: "lucy", label: "Lucy" }]}
-                        placeholder="Chọn"
-                        rules={[{ required: true, message: "1" }]}
-                        allowClear
-                        name={"doctor"}
-                      />
-                    </Col>
+                    {dataForm.specialty && (
+                      <Col span={24}>
+                        <SelectSuggestAI
+                          form={form}
+                          name="doctor"
+                          data={dataDoctors}
+                          isOpenForm={dataForm.doctorAI}
+                          typeSuggest="type2"
+                          infoSelect={{
+                            label: "Bác sĩ",
+                            placeholder: "Chọn bác sĩ",
+                          }}
+                          onChange={(e) => {
+                            console.log({ doctor: e });
+
+                            setDataForm({
+                              ...dataForm,
+                              doctor: e,
+                              doctorAI: false,
+                            });
+                          }}
+                        />
+                      </Col>
+                    )}
                     <Col span={24}>
                       <SelectCustom
                         label="Phòng khám"
-                        options={[{ value: "lucy", label: "Lucy" }]}
+                        options={dataClinics}
                         placeholder="Chọn"
                         rules={[{ required: true, message: "" }]}
                         allowClear
-                        name={"room"}
+                        name={"clinic"}
                       />
                     </Col>
                   </Row>
@@ -121,7 +217,10 @@ const Appointment = (props: Props) => {
                         {dataDate.map((item) => (
                           <div
                             key={item.key}
-                            onClick={() => setDateSelected(item)}
+                            onClick={() => {
+                              setDateSelected(item);
+                              form.setFieldValue("date", item.date);
+                            }}
                             className={
                               "appointment-page__date__item " +
                               (dateSelected?.key === item.key ? " active" : "")
@@ -154,7 +253,10 @@ const Appointment = (props: Props) => {
                         {dataTime.map((item) => (
                           <div
                             key={item.key}
-                            onClick={() => setTimeSelected(item)}
+                            onClick={() => {
+                              setTimeSelected(item);
+                              form.setFieldValue("time", item.time);
+                            }}
                             className={
                               "appointment-page__time__item " +
                               (timeSelected?.key === item.key ? " active" : "")
@@ -177,7 +279,9 @@ const Appointment = (props: Props) => {
                 </Col>
                 <Col span={24}>
                   <Form.Item className="mb-0">
-                    <Button className="base-btn !w-full">Đặt lịch khám</Button>
+                    <Button className="base-btn !w-full" htmlType="submit">
+                      Đặt lịch khám
+                    </Button>
                   </Form.Item>
                 </Col>
               </Row>
@@ -186,6 +290,12 @@ const Appointment = (props: Props) => {
           <ClientFooter className="text-white" />
         </Col>
       </Row>
+      <AppSuccess
+        data={data}
+        open={modalOpen}
+        onOk={() => setModalOpen(false)}
+        onClose={() => setModalOpen(false)}
+      />
     </section>
   );
 };

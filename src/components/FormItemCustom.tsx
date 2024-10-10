@@ -16,7 +16,7 @@ const FormItemCustom: React.FC<Props> = ({
     myLabel = (
       <>
         {myLabel}
-        <span style={{ color: "red" }}> *</span>
+        <span style={{ color: "red", marginLeft: "4px" }}> *</span>
       </>
     );
   }

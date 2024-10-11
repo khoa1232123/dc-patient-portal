@@ -51,7 +51,7 @@ const Appointment = (props: Props) => {
   return (
     <section
       className="appointment-page px-6"
-      style={{ backgroundImage: `url(${appointmentBg.src})` }}
+      // style={{ backgroundImage: `url(${appointmentBg.src})` }}
     >
       <Row>
         <Col span={8}>

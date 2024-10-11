@@ -9,3 +9,4 @@ export { default as iconPartyPopper } from "./party-popper.png";
 export { default as avatarImage } from "./avatar.png";
 export { default as download1Image } from "./App-Store-Black.png";
 export { default as download2Image } from "./Google-Play-Black.png";
+export { default as gumroadBg } from "./Gumroad.png";

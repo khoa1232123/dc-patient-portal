@@ -22,3 +22,4 @@ export { default as DoctorIcon } from "./doctor.svg";
 export { default as ClinicalIcon } from "./clinical.svg";
 export { default as TestTubeIcon } from "./Test-Tube.svg";
 export { default as LockBlueIcon } from "./LockBlue.svg";
+export { default as ArrowLeftIcon } from "./Arrow-Left.svg";

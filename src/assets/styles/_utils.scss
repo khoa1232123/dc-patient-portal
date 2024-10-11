@@ -1,18 +1,50 @@
 .base-btn {
-  height: 56px;
-  width: 170px;
+  min-height: 56px;
+  min-width: 170px;
   padding: 12px 24px;
-  background: linear-gradient(
-    115.17deg,
-    #5de1e7 -18.74%,
-    #2f75fe 91.51%
-  );
+  background: linear-gradient(115.17deg, #5de1e7 -18.74%, #2f75fe 91.51%);
   border: none;
   border-radius: 10px;
   font-weight: 600;
   font-size: 18px;
-  line-height: 21px;
+  line-height: 1;
   color: #ffffff;
+
+  &.outline {
+    background: transparent;
+    color: #2f75fe;
+    position: relative;
+    color: #fff;
+    // background: linear-gradient(to right, red, orange);
+    background: linear-gradient(115.17deg, #5de1e7 -18.74%, #2f75fe 91.51%);
+    background-clip: padding-box; /* !importanté */
+    border: none;
+    border-radius: 10px;
+    span {
+      z-index: 1;
+      position: relative;
+      color: #2f75fe;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      // z-index: 1;
+
+      margin: 1px; /* !importanté */
+      border-radius: 9px;
+      background: #fff;
+    }
+  }
+
+  &.none {
+    background: #f5f6fa;
+    color: #4f5675;
+  }
 }
 
 .base-input {
@@ -50,6 +82,19 @@
         padding-right: 40px;
       }
     }
+
+    &.date {
+      input[type="date"] {
+        // z-index: 2;
+        // background: transparent;
+        padding-right: 10px;
+        &::-webkit-inner-spin-button,
+        &::-webkit-calendar-picker-indicator {
+          background: transparent;
+        }
+      }
+    }
+
   }
 
   &.ant-form-item {
@@ -76,6 +121,14 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 21px;
+
+    // &[type="date"] {
+    //   background: transparent;
+    //   &::-webkit-inner-spin-button,
+    //   &::-webkit-calendar-picker-indicator {
+    //     background: transparent;
+    //   }
+    // }
   }
 }
 
@@ -110,7 +163,7 @@
         border: 1px solid #ff4d4f !important;
       }
     }
-    
+
     .ant-select-selector {
       border: 1px solid #e5e9fb !important;
       border-radius: 10px;
@@ -133,4 +186,22 @@
     justify-content: end;
     align-items: center;
   }
+}
+
+.base-datepicker {
+  &.ant-form-item {
+    margin-bottom: 0;
+  }
+  .ant-form-item-label {
+    label {
+      font-weight: 500;
+      font-size: 16px;
+
+      &::after,
+      &::before {
+        display: none !important;
+      }
+    }
+  }
+
 }

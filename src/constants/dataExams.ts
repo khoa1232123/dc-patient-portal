@@ -1,5 +1,15 @@
 import { doctor1Image, doctor2Image, doctor3Image } from "@/assets/images";
-import { BabyIcon, BoneIcon, PregnantIcon } from "@/assets/svg";
+import {
+  AIColorIcon,
+  AmbulatoryIcon,
+  BabyIcon,
+  BodyIcon,
+  BoneIcon,
+  ClinicalIcon,
+  DoctorIcon,
+  PregnantIcon,
+  TestTubeIcon,
+} from "@/assets/svg";
 
 export const dataDate = [
   {
@@ -246,5 +256,44 @@ export const dataMenu = [
   {
     key: 3,
     label: "Hỏi đáp y tế",
+  },
+];
+
+export const dataServiceList = [
+  {
+    key: 1,
+    label: "Đặt khám tại phòng khám",
+    desc: "It uses a dictionary of over 200 Latin words",
+    icon: AmbulatoryIcon,
+  },
+  {
+    key: 2,
+    label: "Đặt dịch vụ xét nghiệm",
+    desc: "It uses a dictionary of over 200 Latin words",
+    icon: TestTubeIcon,
+  },
+  {
+    key: 3,
+    label: "Đặt khám gói sức khoẻ",
+    desc: "It uses a dictionary of over 200 Latin words",
+    icon: BodyIcon,
+  },
+  {
+    key: 4,
+    label: "Bác sĩ riêng của tôi",
+    desc: "It uses a dictionary of over 200 Latin words",
+    icon: DoctorIcon,
+  },
+  {
+    key: 5,
+    label: "Hỏi đáp y tế",
+    desc: "It uses a dictionary of over 200 Latin words",
+    icon: AIColorIcon,
+  },
+  {
+    key: 6,
+    label: "Hồ sơ sức khoẻ",
+    desc: "It uses a dictionary of over 200 Latin words",
+    icon: ClinicalIcon,
   },
 ];

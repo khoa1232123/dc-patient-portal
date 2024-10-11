@@ -1,4 +1,3 @@
-
 import Appointment from "@/containers/Appointment";
 import React from "react";
 

@@ -10,6 +10,7 @@ type Props = FormItemProps & {
   addAfter?: React.ReactNode;
   classInput?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  type?: string;
 };
 
 const InputCustom = ({
@@ -21,12 +22,25 @@ const InputCustom = ({
   addAfter,
   classInput = "",
   onChange,
+  type,
   ...restProps
 }: Props) => {
   return (
-    <FormItemCustom className={`base-input ${addBefore ? "base-input__add-before" : ""} ${addAfter ? "base-input__add-after" : ""} ${className}`} label={label} name={name} {...restProps}>
+    <FormItemCustom
+      className={`base-input ${addBefore ? "base-input__add-before" : ""} ${
+        addAfter ? "base-input__add-after" : ""
+      } ${className} ${type}`}
+      label={label}
+      name={name}
+      {...restProps}
+    >
       {addBefore && <div className="add-before">{addBefore}</div>}
-      <Input onChange={onChange} placeholder={placeholder} className={classInput} />
+      <Input
+        type={type}
+        onChange={onChange}
+        placeholder={placeholder}
+        className={classInput}
+      />
       {addAfter && <div className="add-after">{addAfter}</div>}
     </FormItemCustom>
   );

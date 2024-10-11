@@ -1,19 +1,12 @@
 "use client";
 import {
   appointmentBg,
-  bgPartyImage,
-  doctor0Image,
-  iconPartyPopper,
+  doctor0Image
 } from "@/assets/images";
 import {
   CalendarBlueIcon,
-  CalendarBlueOutlineIcon,
-  HeartMedicalIcon,
-  MedicalKitIcon,
   PlusGrayIcon,
-  TimeBlueIcon,
-  TimeBlueOutlineIcon,
-  UserColorIcon,
+  TimeBlueIcon
 } from "@/assets/svg";
 import { InputCustom, SelectCustom } from "@/components";
 import {
@@ -24,13 +17,12 @@ import {
   dataMedicalSpecialties,
   dataTime,
 } from "@/constants/dataExams";
-import { Button, Col, Form, Modal, Radio, Row } from "antd";
+import { Col, Form, Radio, Row } from "antd";
 import Image from "next/image";
 import { useState } from "react";
 import { ClientFooter } from "../Layout";
-import SuggestionAI from "./SuggestionAI";
-import SelectSuggestAI from "./SelectSuggestAI";
 import AppSuccess from "./AppSuccess";
+import SelectSuggestAI from "./SelectSuggestAI";
 
 type Props = {};
 
@@ -38,7 +30,7 @@ const Appointment = (props: Props) => {
   const [dateSelected, setDateSelected] = useState<any>({ key: 1 });
   const [timeSelected, setTimeSelected] = useState<any>({ key: 1 });
   const [dataForm, setDataForm] = useState<{ [key: string]: any }>({});
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
   const [data, setData] = useState<{
     clinic?: string;
     date?: string;
@@ -178,8 +170,6 @@ const Appointment = (props: Props) => {
                             placeholder: "Chọn bác sĩ",
                           }}
                           onChange={(e) => {
-                            console.log({ doctor: e });
-
                             setDataForm({
                               ...dataForm,
                               doctor: e,
@@ -279,9 +269,9 @@ const Appointment = (props: Props) => {
                 </Col>
                 <Col span={24}>
                   <Form.Item className="mb-0">
-                    <Button className="base-btn !w-full" htmlType="submit">
+                    <button className="base-btn !w-full" type="submit">
                       Đặt lịch khám
-                    </Button>
+                    </button>
                   </Form.Item>
                 </Col>
               </Row>

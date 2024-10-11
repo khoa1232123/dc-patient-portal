@@ -233,3 +233,18 @@ export const dataClinics = [
   { value: "clinic_11", label: "Phòng khám Đông y Vạn An" },
   { value: "clinic_12", label: "Phòng khám Răng Hàm Mặt Việt Pháp" },
 ];
+
+export const dataMenu = [
+  {
+    key: 1,
+    label: "Đặt khám",
+  },
+  {
+    key: 2,
+    label: "Hồ sơ sức khoẻ",
+  },
+  {
+    key: 3,
+    label: "Hỏi đáp y tế",
+  },
+];

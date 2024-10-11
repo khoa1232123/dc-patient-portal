@@ -27,7 +27,7 @@ const AppSuccess = ({ data, open = false, onOk, onClose, form }: Props) => {
     <Modal
       centered
       open={open}
-      // onOk={handleOk}
+      onOk={handleOk}
       onCancel={onClose}
       className="base-modal"
       width={590}

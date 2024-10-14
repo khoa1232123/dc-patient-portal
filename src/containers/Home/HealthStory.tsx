@@ -14,7 +14,7 @@ const HealthStory = (props: Props) => {
 
         <div className="health-story__list">
           {dataHealthStories.map((item) => (
-            <div className="health-story__item">
+            <div className="health-story__item" key={item.key}>
               <div
                 className="health-story__item__icon"
                 style={{ backgroundColor: item.colorIcon }}

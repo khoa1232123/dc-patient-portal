@@ -425,7 +425,6 @@ export const dataMenuFooter = [
         label: "Đặt khám nhanh",
         link: "#",
       },
-    
       {
         key: 2,
         label: "Đặt khám theo chuyên khoa",
@@ -451,7 +450,7 @@ export const dataMenuFooter = [
         label: "Hồ sơ sức khoẻ",
         link: "#",
       },
-    ]
+    ],
   },
   {
     key: 2,
@@ -477,7 +476,7 @@ export const dataMenuFooter = [
         label: "Quy định sử dụng",
         link: "#",
       },
-    ]
+    ],
   },
   {
     key: 3,
@@ -503,6 +502,6 @@ export const dataMenuFooter = [
         label: "Câu hỏi thường gặp",
         link: "#",
       },
-    ]
-  }
+    ],
+  },
 ];

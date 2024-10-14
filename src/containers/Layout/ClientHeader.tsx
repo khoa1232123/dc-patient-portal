@@ -1,6 +1,7 @@
 import { avatarImage } from "@/assets/images";
 import { LogoSVG, NotificationIcon, PhoneIcon } from "@/assets/svg";
-import { dataMenu } from "@/constants/dataExams";
+import { dataMenu, dataMenu2 } from "@/constants/dataExams";
+import { useAuthContext } from "@/contexts/AuthContext";
 import { Dropdown, Layout, Menu } from "antd";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,7 +27,9 @@ type Props = {
   logged?: boolean;
 };
 
-const ClientHeader = ({ className = "", logged = false }: Props) => {
+const ClientHeader = ({ className = "" }: Props) => {
+  const { logged, setLogged } = useAuthContext();
+
   return (
     <Header
       className={`client-header !px-6 ${logged ? "logged" : ""} ${className}`}
@@ -34,7 +37,9 @@ const ClientHeader = ({ className = "", logged = false }: Props) => {
       {logged && (
         <div className="client-header__left">
           <div className="client-header__logo">
-            <LogoSVG width={143} height={34} />
+            <Link href={"/"}>
+              <LogoSVG width={143} height={34} />
+            </Link>
           </div>
         </div>
       )}
@@ -43,7 +48,7 @@ const ClientHeader = ({ className = "", logged = false }: Props) => {
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={["1"]}
-          items={dataMenu}
+          items={logged ? dataMenu2 : dataMenu}
           style={{ flex: 1, minWidth: 0 }}
           className="client-header__menu"
         />
@@ -52,7 +57,12 @@ const ClientHeader = ({ className = "", logged = false }: Props) => {
         {logged ? (
           <>
             <div className="client-header__btn">
-              <button className="base-btn">Tải ứng dụng</button>
+              <button
+                className="base-btn !h-[42px] !min-h-0"
+                onClick={() => setLogged(false)}
+              >
+                Tải ứng dụng
+              </button>
             </div>
             <div className="client-header__hotline">
               <span className="client-header__hotline__icon">
@@ -96,7 +106,9 @@ const ClientHeader = ({ className = "", logged = false }: Props) => {
               </div>
             </div>
             <div className="client-header__btn">
-              <button className="base-btn">Đăng nhập</button>
+              <button className="base-btn" onClick={() => setLogged(true)}>
+                Đăng nhập
+              </button>
             </div>
           </>
         )}

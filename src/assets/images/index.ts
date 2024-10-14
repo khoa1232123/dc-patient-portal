@@ -1,5 +1,7 @@
 export { default as appointmentBg } from "./appointment-bg.png";
 export { default as logoMini } from "./logo-mini.png";
+export { default as logoThuCuc } from "./logo-thu-cuc.png";
+export { default as doctor0FullImage } from "./doctor-0-full.png";
 export { default as doctor0Image } from "./doctor-0.png";
 export { default as doctor1Image } from "./doctor-1.png";
 export { default as doctor2Image } from "./doctor-2.png";
@@ -10,3 +12,4 @@ export { default as avatarImage } from "./avatar.png";
 export { default as download1Image } from "./App-Store-Black.png";
 export { default as download2Image } from "./Google-Play-Black.png";
 export { default as gumroadBg } from "./Gumroad.png";
+export { default as heroBg } from "./Hero-Bg.png";

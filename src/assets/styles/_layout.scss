@@ -10,7 +10,8 @@
   display: flex;
   height: 86px !important;
   align-items: center;
-  z-index: 9;
+  z-index: 99;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1019607843);
 
   $this: &;
 
@@ -182,8 +183,104 @@
 
 .client-footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 12px;
-  padding: 24px 0;
+  &__top {
+    width: 100%;
+    padding-top: 36px;
+    padding-bottom: 24px;
+  }
+
+  &__bottom {
+    border-top: 1px solid #e5e9fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 0;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.41px;
+    color: #4f5675;
+  }
+
+  &__title {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.09px;
+    text-align: left;
+    margin-bottom: 12px;
+  }
+
+  &__logo {
+    margin-bottom: 16px;
+  }
+
+  &__item {
+    @include flex(8px, start, start);
+    flex-direction: column;
+
+    p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 21px;
+      text-align: left;
+
+      span {
+        font-weight: 700;
+      }
+
+      a {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+        text-align: left;
+        color: #121831;
+
+        &:hover {
+          color: #1677ff;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    @include flex(12px, start, start);
+    flex-direction: column;
+    &__item {
+      a {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        color: #121831;
+        animation-duration: 300ms;
+
+        &:hover {
+          color: #1677ff;
+        }
+      }
+    }
+  }
+}
+
+.breakcrumb {
+  padding-top: 20px;
+  padding-bottom: 24px;
+  backdrop-filter: blur(0px);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 74, 173, 0.2) 0%,
+    rgba(5, 0, 255, 0.16) 100%
+  );
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #FFFFFF;
+
 }

@@ -1,7 +1,5 @@
 .appointment-layout {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  @include bgCenter;
 }
 
 .appointment-page {
@@ -32,9 +30,9 @@
     }
 
     &__img {
-      left: -50px;
+      left: 0px;
       bottom: 0;
-      position: fixed;
+      position: absolute;
       width: 35%;
     }
   }
@@ -79,65 +77,19 @@
       $this: &;
 
       &:hover {
-        position: relative;
-        color: #fff;
-        // background: linear-gradient(to right, red, orange);
-        background: linear-gradient(115.17deg, #5de1e7 -18.74%, #2f75fe 91.51%);
-        background-clip: padding-box; /* !importanté */
-        border: none;
-        border-radius: 10px;
-
-        &:before {
-          content: "";
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          // z-index: 1;
-
-          margin: 1px; /* !importanté */
-          border-radius: 9px;
-          background: #f5f6fa;
-        }
+        @include borderGradient;
       }
 
       &.active {
-        position: relative;
-        color: #fff;
-        // background: linear-gradient(to right, red, orange);
-        background: linear-gradient(115.17deg, #5de1e7 -18.74%, #2f75fe 91.51%);
-        background-clip: padding-box; /* !importanté */
-        border: none;
-        border-radius: 10px;
-
+        @include borderGradient;
         #{$this} {
           &--date,
           &--time,
           &--text {
-            background: linear-gradient(
-              115.17deg,
-              #5de1e7 -18.74%,
-              #2f75fe 91.51%
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            @include textGradient;
           }
         }
 
-        &:before {
-          content: "";
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          // z-index: 1;
-
-          margin: 1px; /* !importanté */
-          border-radius: 9px;
-          background: #f5f6fa;
-        }
       }
 
       &--date,
@@ -202,20 +154,16 @@
     margin-bottom: 12px;
   }
   &__bottom {
+    @include textGradient;
     white-space: nowrap;
-    background: linear-gradient(115.17deg, #5de1e7 -18.74%, #2f75fe 91.51%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     text-align: center;
     margin-top: 12px;
     cursor: pointer;
   }
   &__close {
+    @include textGradient;
     cursor: pointer;
     white-space: nowrap;
-    background: linear-gradient(115.17deg, #5de1e7 -18.74%, #2f75fe 91.51%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 
   &__list {
@@ -356,27 +304,7 @@
       font-weight: 600;
       border-radius: 10px;
 
-      position: relative;
-      color: #fff;
-      // background: linear-gradient(to right, red, orange);
-      background: linear-gradient(115.17deg, #5de1e7 -18.74%, #2f75fe 91.51%);
-      background-clip: padding-box; /* !importanté */
-      border: none;
-      border-radius: 10px;
-
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        // z-index: 1;
-
-        margin: 1px; /* !importanté */
-        border-radius: 9px;
-        background: #f5f6fa;
-      }
+      @include borderGradient;
 
       &__left,
       &__right {
@@ -385,13 +313,7 @@
         span {
           line-height: 1;
           font-size: 16px;
-          background: linear-gradient(
-            115.17deg,
-            #5de1e7 -18.74%,
-            #2f75fe 91.51%
-          );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          @include textGradient;
         }
       }
 

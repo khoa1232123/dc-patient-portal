@@ -5,10 +5,15 @@ import {
   BabyIcon,
   BodyIcon,
   BoneIcon,
+  CalendarBlueIcon,
   ClinicalIcon,
   DoctorIcon,
+  Logo2SVG,
+  MedicinesWhiteIcon,
   PregnantIcon,
   TestTubeIcon,
+  TestTubeWhiteIcon,
+  XrayWhiteIcon,
 } from "@/assets/svg";
 
 export const dataDate = [
@@ -259,6 +264,29 @@ export const dataMenu = [
   },
 ];
 
+export const dataMenu2 = [
+  {
+    key: 1,
+    label: "Trang chủ",
+  },
+  {
+    key: 2,
+    label: "Đặt khám",
+  },
+  {
+    key: 3,
+    label: "Hồ sơ sức khoẻ",
+  },
+  {
+    key: 4,
+    label: "Hỏi đáp y tế",
+  },
+  {
+    key: 5,
+    label: "Quản lý tài liệu",
+  },
+];
+
 export const dataServiceList = [
   {
     key: 1,
@@ -296,4 +324,185 @@ export const dataServiceList = [
     desc: "It uses a dictionary of over 200 Latin words",
     icon: ClinicalIcon,
   },
+];
+
+export const dataHeroItems = [
+  {
+    key: 1,
+    label: "Hồ sơ sức khoẻ",
+    icon: ClinicalIcon,
+  },
+  {
+    key: 2,
+    label: "Đặt hẹn khám",
+    icon: CalendarBlueIcon,
+  },
+  {
+    key: 3,
+    label: "Bác sĩ riêng của tôi",
+    icon: DoctorIcon,
+  },
+  {
+    key: 4,
+    label: "Hỏi đáp y tế",
+    icon: AIColorIcon,
+  },
+];
+
+export const dataMyClinics = [
+  {
+    key: 1,
+    label: "Phòng khám Đa khoa Việt Đức",
+    address: "Số 10 Đai Linh, Trung Văn",
+    icon: Logo2SVG,
+    department: "Phòng khám chuyên khoa",
+    space: "1.0 Km",
+    time: "10:00 - 20:00",
+    phone: "1900 1234",
+  },
+  {
+    key: 2,
+    label: "Phòng khám Đa khoa Vimmec",
+    address: "Lô 22 số 35 Lê Văn Thiêm, Thanh Xuân, Hà Nội",
+    icon: Logo2SVG,
+    department: "Phòng khám đa khoa",
+    space: "1.0 Km",
+    time: "10:00 - 20:00",
+    phone: "1900 1234",
+  },
+];
+
+export const dataHealthStories = [
+  {
+    key: 1,
+    colorIcon: "#35C4C4",
+    icon: MedicinesWhiteIcon,
+    title: "Dược phẩm ABC",
+    desc: "It uses a dictionary of over 200 Latin words",
+    link: "#",
+  },
+  {
+    key: 2,
+    colorIcon: "#FC9AA2",
+    icon: TestTubeWhiteIcon,
+    title: "Xét nghiệm",
+    desc: "It uses a dictionary of over 200 Latin words",
+    link: "#",
+  },
+  {
+    key: 3,
+    colorIcon: "#537AFD",
+    icon: XrayWhiteIcon,
+    title: "Chẩn đoán hình ảnh",
+    desc: "It uses a dictionary of over 200 Latin words",
+    link: "#",
+  },
+  {
+    key: 4,
+    colorIcon: "#FFC747",
+    icon: TestTubeWhiteIcon,
+    title: "Dược phẩm ABC",
+    desc: "It uses a dictionary of over 200 Latin words",
+    link: "#",
+  },
+  {
+    key: 5,
+    colorIcon: "#DD94FF",
+    icon: TestTubeWhiteIcon,
+    title: "Dược phẩm ABC",
+    desc: "It uses a dictionary of over 200 Latin words",
+    link: "#",
+  },
+];
+
+export const dataMenuFooter = [
+  {
+    key: 1,
+    title: "Dịch vụ y tế",
+    menu: [
+      {
+        key: 1,
+        label: "Đặt khám nhanh",
+        link: "#",
+      },
+    
+      {
+        key: 2,
+        label: "Đặt khám theo chuyên khoa",
+        link: "#",
+      },
+      {
+        key: 3,
+        label: "Đặt khám theo bác sĩ",
+        link: "#",
+      },
+      {
+        key: 4,
+        label: "Hỏi đáp y tế",
+        link: "#",
+      },
+      {
+        key: 5,
+        label: "Bác sĩ tư vấn",
+        link: "#",
+      },
+      {
+        key: 6,
+        label: "Hồ sơ sức khoẻ",
+        link: "#",
+      },
+    ]
+  },
+  {
+    key: 2,
+    title: "Về chúng tôi",
+    menu: [
+      {
+        key: 1,
+        label: "Giới thiệu",
+        link: "#",
+      },
+      {
+        key: 2,
+        label: "Điều khoản dịch vụ",
+        link: "#",
+      },
+      {
+        key: 3,
+        label: "Chính sách bảo mật",
+        link: "#",
+      },
+      {
+        key: 4,
+        label: "Quy định sử dụng",
+        link: "#",
+      },
+    ]
+  },
+  {
+    key: 3,
+    title: "Hướng dẫn",
+    menu: [
+      {
+        key: 1,
+        label: "Cài đặt ứng dụng",
+        link: "#",
+      },
+      {
+        key: 2,
+        label: "Đặt lịch khám",
+        link: "#",
+      },
+      {
+        key: 3,
+        label: "Quy trình hoàn phí",
+        link: "#",
+      },
+      {
+        key: 4,
+        label: "Câu hỏi thường gặp",
+        link: "#",
+      },
+    ]
+  }
 ];

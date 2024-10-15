@@ -11,6 +11,7 @@ import BaoCaoYTe from "../BaoCaoYTe/BaoCaoYTe";
 import styles from "./styles.module.scss";
 import DonThuoc from "../DonThuoc/DonThuoc";
 import KetQuaXn from "../KetQuaXn/KetQuaXn";
+import ChanDoanHA from "../ChanDoanHA";
 
 const typeList = [
   {
@@ -125,6 +126,9 @@ const CauChuyenSk = () => {
       case "XETNGHIEM":
         return <KetQuaXn info={info} setOpen={setOpen} />;
 
+        case "CHUANDOANHA":
+          return <ChanDoanHA info={info} setOpen={setOpen} />;
+  
       default:
         return "";
     }

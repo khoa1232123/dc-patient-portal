@@ -13,3 +13,8 @@ export { default as download1Image } from "./App-Store-Black.png";
 export { default as download2Image } from "./Google-Play-Black.png";
 export { default as gumroadBg } from "./Gumroad.png";
 export { default as heroBg } from "./Hero-Bg.png";
+
+export { default as CDHA01Image } from "./CDHA01.png";
+export { default as CDHA02Image } from "./CDHA02.png";
+export { default as CDHA03Image } from "./CDHA03.png";
+export { default as CDHA04Image } from "./CDHA04.png";

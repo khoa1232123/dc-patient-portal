@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import { Col, Row, Table, Tabs } from "antd";
 
-export const sharedOnCell = (record, index) => {
+export const sharedOnCell = (record:any, index:any) => {
   if (record?.children?.length > 0) {
     return {
       colSpan: 0,

@@ -1,8 +1,14 @@
+//mixin
+@import "./mixin";
+
 // utils
-@import './utils';
+@import "./utils";
 
 // layout
-@import './layout';
+@import "./layout";
 
 // page
-@import './appointment';
+@import "./appointment";
+@import "./login";
+@import "./home";
+// }

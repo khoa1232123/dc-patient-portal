@@ -1,5 +1,8 @@
 "use client";
+import ScrollToTop from "@/components/ScrollToTop";
 import { ClientFooter, ClientHeader } from "@/containers/Layout";
+import { AppointmentProvider, useAppointmentContext } from "@/contexts/AppointmentContext";
+import { AuthProvider } from "@/contexts/AuthContext";
 import { Spin } from "antd";
 import React, { useEffect, useState } from "react";
 
@@ -16,9 +19,14 @@ const ClientLayout = ({ children }: Props) => {
 
   return (
     <>
-      <Spin spinning={loading} />
-      {/* <ClientHeader /> */}
-      <main className="h-[100vh]">{children}</main>
+      <AuthProvider>
+        <Spin spinning={loading}>
+          <ClientHeader />
+          <main>{children}</main>
+          <ClientFooter />
+        </Spin>
+        <ScrollToTop />
+      </AuthProvider>
     </>
   );
 };

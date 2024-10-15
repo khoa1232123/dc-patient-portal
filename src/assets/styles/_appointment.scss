@@ -1,9 +1,55 @@
+.appointment-layout {
+  @include bgCenter;
+}
+
 .appointment-page {
   min-height: 100vh;
   padding-top: 110px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  position: relative;
+
+  @include mobile {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__left {
+    padding-top: 50px;
+
+    @include tablet {
+      display: none;
+    }
+
+    &__title {
+      font-size: 36px;
+      font-weight: 400;
+      text-align: left;
+      color: white;
+      width: 332px;
+      line-height: 42.19px;
+      margin-bottom: 10px;
+    }
+
+    &__desc {
+      width: 332px;
+      height: 21px;
+      top: 297px;
+      left: 56px;
+      gap: 0px;
+      opacity: 0px;
+      color: white;
+    }
+
+    &__img {
+      left: 0px;
+      bottom: 0;
+      position: absolute;
+      width: 35%;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
 
   &__right {
     border-radius: 20px;
@@ -17,11 +63,10 @@
     margin-bottom: 12px;
   }
 
-  &__date, &__time {
+  &__date,
+  &__time {
     &__title {
       @apply flex gap-2 font-medium text-[16px];
-
-
     }
 
     &__list {
@@ -45,46 +90,27 @@
 
       $this: &;
 
-      &.active {
-        position: relative;
-        color: #fff;
-        // background: linear-gradient(to right, red, orange);
-        background: linear-gradient(115.17deg, #5de1e7 -18.74%, #2f75fe 91.51%);
-        background-clip: padding-box; /* !importanté */
-        border: none;
-        border-radius: 10px;
+      &:hover {
+        @include borderGradient;
+      }
 
+      &.active {
+        @include borderGradient;
         #{$this} {
-          &--date, &--time, &--text {
-            background: linear-gradient(
-              115.17deg,
-              #5de1e7 -18.74%,
-              #2f75fe 91.51%
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+          &--date,
+          &--time,
+          &--text {
+            @include textGradient;
           }
         }
 
-        &:before {
-          content: "";
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          // z-index: 1;
-
-          margin: 1px; /* !importanté */
-          border-radius: 9px;
-          background: #f5f6fa;
-        }
       }
 
-      &--date, &--time {
+      &--date,
+      &--time {
         font-size: 16px;
         color: #000;
-        font-weight: 600;
+        font-weight: 500;
         z-index: 2;
       }
 
@@ -104,6 +130,222 @@
 
     &__item {
       min-height: 48px;
+    }
+  }
+
+  &__note {
+    font-size: 14px;
+  }
+}
+
+.suggestion-ai {
+  padding: 12px 12px 12px 12px;
+  gap: 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e9fb;
+  opacity: 0px;
+  background: #f5f6fa;
+
+  $this: &;
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  &.type2 {
+    #{$this}__item {
+      gap: 12px;
+      padding: 12px;
+      border-radius: 15px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  &__bottom {
+    @include textGradient;
+    white-space: nowrap;
+    text-align: center;
+    margin-top: 12px;
+    cursor: pointer;
+  }
+  &__close {
+    @include textGradient;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  &__item {
+    display: flex;
+    min-height: 48px;
+    gap: 4px;
+    padding: 0px 12px;
+    background: #fff;
+    justify-content: start;
+    align-items: center;
+    box-shadow: 0px 4px 20px 0px #0000000d;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background: #2f75fe;
+      color: white;
+    }
+  }
+}
+
+.app-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.okButton, &.cancelButton {
+    padding: 24px;
+    gap: 10px;
+    border-radius: 10px;
+    opacity: 0px;
+    border: none;
+    flex: 1;
+    font-weight: 500;
+    font-size: 16px;
+
+    background: linear-gradient(115.17deg, #5de1e7 -18.74%, #2f75fe 91.51%) !important;
+  }
+
+  &.cancelButton {
+    flex: 0;
+    color: black !important;
+    min-width: 160px;
+    background: #F5F6FA !important;
+
+  }
+
+  &__wrap {
+    background-color: white;
+    width: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0px;
+    position: relative;
+    gap: 12px;
+  }
+
+  &__close {
+    border: none !important;
+    box-shadow: none !important;
+    position: absolute !important;
+    top: 20px;
+    right: 20px;
+  }
+
+  &__title {
+    @apply text-center text-[28px] font-medium text-black mb-0;
+  }
+
+  &__thanks {
+    @apply w-full text-left p-[12px] pl-[40px] pr-0 relative mt-4;
+    background: #f5f6fa;
+    border-radius: 10px;
+
+    &__bg {
+      @apply absolute w-[85%] left-[50%];
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+
+    &__icon {
+      @apply w-[24px] h-[24px] absolute top-[50%] left-[12px];
+      transform: translateY(-50%);
+    }
+
+    p {
+      @apply text-black font-normal text-[16px] text-left mb-0 relative z-10;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    &__title {
+      @apply mb-2 font-medium;
+    }
+    &__wrap {
+      @apply flex flex-col text-center p-[24px] relative;
+      background: #f5f6fa;
+      border-radius: 10px;
+      gap: 12px;
+      p {
+        @apply text-black font-normal text-[16px] text-center mb-0 relative z-10;
+      }
+
+      &__title {
+        @apply flex items-center gap-[8px] font-semibold;
+
+        h4 {
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 28px;
+          text-align: left;
+        }
+
+        &__icon {
+          @apply flex items-center justify-center w-[30px] h-[30px] rounded-[10px];
+          background: #4080ff1a;
+        }
+      }
+    }
+
+    &__date {
+      @apply flex justify-center items-center;
+      padding: 12px 24px;
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+      border-radius: 10px;
+
+      @include borderGradient;
+
+      &__left,
+      &__right {
+        @apply flex flex-1 justify-start items-center gap-2 z-10;
+
+        span {
+          line-height: 1;
+          font-size: 16px;
+          @include textGradient;
+        }
+      }
+
+      &__icon {
+        @apply w-[16px] h-[16px];
+      }
+    }
+
+    &__list {
+      @apply flex gap-y-[6px];
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__item {
+      display: flex;
+      gap: 8px;
+      align-items: center;
     }
   }
 

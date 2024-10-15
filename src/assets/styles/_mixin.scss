@@ -1,0 +1,133 @@
+@mixin bgCenter {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@mixin borderGradient {
+  position: relative;
+  color: #fff;
+  background: linear-gradient(115.17deg, #5de1e7 -18.74%, #2f75fe 91.51%);
+  background-clip: padding-box; /* !importanté */
+  border: none;
+  border-radius: 10px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: 1px;
+    border-radius: 9px;
+    background: #f5f6fa;
+  }
+}
+
+@mixin textGradient {
+  background: linear-gradient(115.17deg, #5de1e7 -18.74%, #2f75fe 91.51%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin bgGradient {
+  background: linear-gradient(115.17deg, #5de1e7 -18.74%, #2f75fe 91.51%);
+}
+
+@mixin flex($gap: 0, $justify: center, $items: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $items;
+  gap: $gap;
+}
+
+@mixin title {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 38.4px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+@mixin boxPage($radius: 15px, $padding: 24px, $bg: white) {
+  border-radius: $radius;
+  box-shadow: 0px 4px 20px 0px #0000001A;
+  padding: $padding;
+  background: $bg;
+}
+
+$mobile-width: 768px;
+$tablet-width: 992px;
+$smallDesktop-width: 1200px;
+$mediumDesktop-width: 1600px;
+
+@mixin mobile {
+  @media only screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin smallDesktop {
+  @media only screen and (max-width: $smallDesktop-width) {
+    @content;
+  }
+}
+
+@mixin mediumDesktop {
+  @media only screen and (max-width: $mediumDesktop-width) {
+    @content;
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+@include mediumDesktop {
+  .xl-none {
+    display: none;
+  }
+  .xl-block {
+    display: block;
+  }
+}
+
+@include smallDesktop {
+  .lg-none {
+    display: none;
+  }
+  .lg-block {
+    display: block;
+  }
+}
+
+@include tablet {
+  .md-none {
+    display: none;
+  }
+  .md-block {
+    display: block;
+  }
+}
+
+@include mobile {
+  .sm-none {
+    display: none;
+  }
+
+  .sm-block {
+    display: block;
+  }
+}

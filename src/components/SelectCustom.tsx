@@ -13,19 +13,13 @@ export interface FlattenOptionData<OptionType> {
   group?: boolean;
 }
 
-type Option = {
-  value: string | number;
-  label: React.ReactNode;
-  [key: string]: any;
-};
-
 type Props = FormItemProps & {
   rules?: any[];
   label?: React.ReactNode;
   placeholder?: string;
   defaultValue?: string;
-  value?: string | number;
-  options?: Option[];
+  value?: string;
+  options?: OptionProps[];
   optionRender?: (
     oriOption: FlattenOptionData<BaseOptionType>,
     info: {
@@ -33,6 +27,8 @@ type Props = FormItemProps & {
     }
   ) => React.ReactNode;
   allowClear?: boolean;
+  variant?: "outlined" | "borderless" | "filled";
+  onChange?: (e: string | number) => void;
 };
 
 const SelectCustom = ({
@@ -45,6 +41,8 @@ const SelectCustom = ({
   options,
   optionRender,
   allowClear = false,
+  variant,
+  onChange,
   ...restProps
 }: Props) => {
   return (
@@ -52,9 +50,11 @@ const SelectCustom = ({
       className={`base-select ${className}`}
       label={label}
       name={name}
+      initialValue={value}
       {...restProps}
     >
       <Select
+        showSearch
         defaultValue={defaultValue}
         value={value}
         style={{ width: "100%" }}
@@ -62,6 +62,15 @@ const SelectCustom = ({
         options={options}
         placeholder={placeholder}
         optionRender={optionRender}
+        variant={variant}
+        onChange={onChange}
+        autoClearSearchValue
+        optionFilterProp="label"
+        filterSort={(optionA, optionB) =>
+          (optionA?.label ?? "")
+            .toLowerCase()
+            .localeCompare((optionB?.label ?? "").toLowerCase())
+        }
       />
     </FormItemCustom>
   );

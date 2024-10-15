@@ -1,18 +1,124 @@
+
+.g-body {
+  padding-top: 86px;
+
+  @include mobile {
+    padding-top: 64px;
+  }
+}
 .client-header {
   background: linear-gradient(
     180deg,
     rgba(0, 74, 173, 0.2) 0%,
     rgba(5, 0, 255, 0.16) 100%
-  );
+  ) !important;
   position: fixed;
   top: 0;
   width: 100%;
   display: flex;
-  height: 86px;
+  height: 86px !important;
   align-items: center;
-  z-index: 9;
+  z-index: 99;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1019607843);
 
-  &__left {
+  @include mobile {
+    padding: 0px 12px !important;
+    height: 64px !important;
+  }
+
+  &__logo {
+    @include mobile {
+      svg {
+        width: 100px;
+      }
+    }
+  }
+
+  $this: &;
+
+  &.logged {
+    background: white !important;
+    * {
+      color: black;
+    }
+
+    #{$this} {
+      &__center {
+        justify-content: center;
+        align-items: center;
+      }
+      &__menu {
+        justify-content: center;
+        align-items: center;
+
+        li {
+          line-height: 1;
+          font-size: 16px;
+          font-weight: 500;
+          border-radius: 10px !important;
+          padding: 0 8px;
+
+          &.ant-menu-item-selected {
+            background: transparent;
+            span {
+              @include textGradient;
+            }
+          }
+        }
+        height: 42px;
+
+        span {
+          height: 42px;
+        }
+      }
+
+      &__right {
+        gap: 16px;
+
+        @include mobile {
+          gap: 8px;
+        }
+      }
+
+      &__btn {
+        button {
+          @apply w-auto h-[42px] px-[24px] py-[10px] text-white;
+          font-weight: 500;
+        }
+      }
+
+      &__hotline {
+        &__icon {
+          width: 42px;
+          height: 42px;
+        }
+        &__text {
+          color: black;
+          font-size: 16px;
+
+          @include mobile {
+            font-size: 12px;
+          }
+        }
+
+        &__phone {
+          background: linear-gradient(
+            115.17deg,
+            #5de1e7 -18.74%,
+            #2f75fe 91.51%
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+
+          @include mobile {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  &__center {
     flex: 1;
   }
 
@@ -20,11 +126,94 @@
     display: flex;
     align-items: center;
     gap: 36px;
+
+    @include mobile {
+      gap: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .client-header__btn {
+        button {
+          height: 42px;
+          min-width: 150px;
+        }
+      }
+
+      .client-header__hotline__icon {
+        width: 42px;
+        height: 42px;
+      }
+
+      .client-header__hotline__text {
+        font-size: 12px;
+      }
+      .client-header__hotline__phone {
+        font-size: 18px;
+      }
+    }
+
+  }
+
+  &__open-drawer {
+    border: none !important;
+    display: none !important;
+    background: linear-gradient(239.52deg, #5cdae8 -4.24%, #547bfe 50.45%) !important;
+    padding: 0 8px !important;
+    width: 42px !important;
+    height: 42px !important;
+    
+    @include smallDesktop {
+      display: flex !important;
+      gap: 16px;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: white
+    }
   }
 
   &__menu {
-    background: transparent;
+    background: transparent !important;
     height: 56px;
+    border: none !important;
+
+    li {
+      background: transparent !important;
+      border: none !important;
+
+      &.ant-menu-item-selected {
+        span {
+        color: white;
+      }
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    @include smallDesktop {
+      display: none !important;
+    }
+
+    &__mobile {
+      border: none !important;
+      li {
+        padding: 0px !important;
+        background-color: transparent !important;
+        margin: 0px !important;
+
+        &.ant-menu-item-selected {
+          span {
+            @include textGradient;
+          }
+        }
+      }
+    }
+
     li {
       line-height: 1;
       font-size: 18px;
@@ -37,10 +226,44 @@
     }
   }
 
+  &__user {
+    display: flex;
+    gap: 8px;
+
+    &__notification {
+      background: #e5e9fb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 100px;
+      position: relative;
+
+      &__dot {
+        width: 5px;
+        height: 5px;
+        background-color: red;
+        border-radius: 5px;
+        position: absolute;
+        top: 9px;
+        right: 9px;
+      }
+    }
+
+    &__avatar {
+      cursor: pointer;
+    }
+  }
+
   &__hotline {
     display: flex;
     align-items: center;
     gap: 12px;
+
+    @include mobile {
+      gap: 8px;
+    }
 
     &__icon {
       display: flex;
@@ -48,9 +271,9 @@
       justify-content: center;
       width: 56px;
       height: 56px;
-      background: linear-gradient(239.52deg, #5CDAE8 -4.24%, #547BFE 50.45%);
+      background: linear-gradient(239.52deg, #5cdae8 -4.24%, #547bfe 50.45%);
       border-radius: 50%;
-      border: 1px solid #FFFFFF80;
+      border: 1px solid #ffffff80;
 
       > svg {
         width: 24px;
@@ -68,22 +291,122 @@
     }
 
     &__text {
-        color: white;
+      color: white;
     }
 
     &__phone {
       font-weight: 700;
-      font-size: 26px;
+      font-size: 24px;
       line-height: 28px;
-      color: #FFFFFF;
+      color: #ffffff;
     }
   }
 }
 
 .client-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  &__top {
+    width: 100%;
+    padding-top: 36px;
+    padding-bottom: 24px;
+  }
+
+  &__bottom {
+    border-top: 1px solid #e5e9fb;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;
     padding: 24px 0;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.41px;
+    color: #4f5675;
+  }
+
+  &__title {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.09px;
+    text-align: left;
+    margin-bottom: 12px;
+  }
+
+  &__logo {
+    margin-bottom: 16px;
+  }
+
+  &__item {
+    @include flex(8px, start, start);
+    flex-direction: column;
+
+    p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 21px;
+      text-align: left;
+
+      span {
+        font-weight: 700;
+      }
+
+      a {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+        text-align: left;
+        color: #121831;
+
+        &:hover {
+          color: #1677ff;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    @include flex(12px, start, start);
+    flex-direction: column;
+    &__item {
+      a {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        color: #121831;
+        animation-duration: 300ms;
+
+        &:hover {
+          color: #1677ff;
+        }
+      }
+    }
+  }
+}
+
+.breakcrumb {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  backdrop-filter: blur(0px);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 74, 173, 0.2) 0%,
+    rgba(5, 0, 255, 0.16) 100%
+  );
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #ffffff;
+
+  @include mobile {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }

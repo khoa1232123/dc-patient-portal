@@ -1,0 +1,112 @@
+.wrap-container {
+    .header {
+        @apply flex flex-col items-center;
+
+        .header-icon {
+            @apply w-[72px] h-[72px] bg-[#35C4C4] rounded-full flex items-center justify-center content-center;
+
+            svg {
+                @apply w-[50px] h-[90px] text-4xl;
+            }
+        }
+
+        h3 {
+            font-weight: 600;
+            font-size: 32px;
+            color: #121831;
+        }
+
+        h4 {
+            font-weight: 500;
+            font-size: 16px;
+            color: #868CAA;
+        }
+    }
+
+    .heading {
+        background: linear-gradient(115.17deg, #5DE1E7 -18.74%, #2F75FE 91.51%);
+        -webkit-background-clip: text; // Chỉ định phần nền áp dụng cho chữ
+        -webkit-text-fill-color: transparent;
+        font-size: 20px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+    }
+
+    h2 {
+        background-color: #F5F6FA;
+        padding: 8px 12px;
+        border-radius: 6px;
+    }
+}
+
+.tab {
+    :global {
+
+        .ant-tabs-nav {
+            width: 100%;
+        }
+
+        .ant-tabs-tab {
+            @apply py-[12px] !important;
+        }
+
+        .ant-tabs-tab-btn {
+            font-weight: 500;
+            font-size: 20px;
+            color: #868CAA;
+        }
+
+        :where(.css-dev-only-do-not-override-ccdg5a).ant-tabs .ant-tabs-ink-bar {
+            background: linear-gradient(115.17deg, #5DE1E7 -18.74%, #2F75FE 91.51%) !important;
+            width: 4px;
+            border-radius: 10px;
+        }
+
+        .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+            background: linear-gradient(143.91deg, #5DE1E7 18.17%, #558DFA 78.92%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            text-shadow: none;
+        }
+    }
+}
+
+.wrap-table {
+    background-color: #F5F6FA;
+    border-radius: 10px;
+    padding: 24px;
+
+    .table-header {
+        padding: 12px;
+
+        * {
+            color: #121831;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+    }
+
+    .table-body {
+        overflow: auto;
+        height: 400px;
+    }
+
+    .table-row {
+        padding: 12px;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+
+        *{
+            color: #121831;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+    .table-row + .table-row {
+        margin-top: 12px;
+    }
+}

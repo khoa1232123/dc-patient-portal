@@ -1,0 +1,92 @@
+.wrap-container {
+    .header {
+        @apply flex flex-col items-center;
+
+        .header-icon {
+            @apply w-[72px] h-[72px] bg-[#FC9AA2] rounded-full flex items-center justify-center content-center;
+
+            svg {
+                @apply w-[50px] h-[90px] text-4xl;
+            }
+        }
+
+        h3 {
+            font-weight: 600;
+            font-size: 32px;
+            color: #121831;
+        }
+
+        h4 {
+            font-weight: 500;
+            font-size: 16px;
+            color: #868CAA;
+        }
+    }
+
+  
+
+    h2 {
+        background-color: #F5F6FA;
+        padding: 8px 12px;
+        border-radius: 6px;
+    }
+}
+
+
+.wrap-table {
+    background-color: #F5F6FA;
+    border-radius: 10px;
+    padding: 24px;
+
+    :global {
+        :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper .ant-table-cell, :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper .ant-table-thead>tr>th, :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper .ant-table-tbody>tr>th, :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper .ant-table-tbody>tr>td, :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper tfoot>tr>th, :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper tfoot>tr>td {
+            padding: 12px 12px;
+        }
+
+        .ant-table-content {
+            background-color: #F5F6FA !important;
+        }
+
+        :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper .ant-table-thead >tr>th, :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper .ant-table-thead >tr>td {
+            background-color: #F5F6FA !important;
+        }
+
+        :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper .ant-table-thead >tr>th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before, :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper .ant-table-thead >tr>td:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+            display: none;
+        }
+    }
+
+   
+}
+
+.icon {
+    svg {
+        display: unset;
+        font-size: 8px;
+    }
+}
+
+.parent {
+    border-radius: 8px !important;
+    overflow: hidden;
+    td {
+    background-color: #FFFFFF;
+    overflow: hidden;
+
+    }
+    td:first-child {
+        border-radius: 10px 0 0 10px;
+    overflow: hidden;
+
+    }
+    
+    td:last-child {
+        border-radius: 0 10px 10px 0;
+        overflow: hidden;
+
+    }
+}
+
+.children {
+    background-color: #F5F6FA;
+}

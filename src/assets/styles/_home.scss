@@ -7,6 +7,14 @@
   align-items: center;
   gap: 12px;
 
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
   &__top {
     font-size: 18px;
     font-weight: 500;
@@ -37,6 +45,9 @@
     display: flex;
     gap: 12px;
     justify-content: center;
+    @include mobile {
+        flex-direction: column;
+    }
     &--profile,
     &--doc {
       background: #121831;
@@ -56,6 +67,12 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
     margin-top: 70px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 36px;
+    }
   }
 
   &__item {
@@ -415,9 +432,25 @@
     @include flex(0, space-between);
     @include boxPage(22px);
 
+    @include mobile {
+      @include flex(12px, space-between, start);
+      flex-direction: column;
+    }
+
     &__left,
     &__right {
       @include flex(12px, space-between);
+    }
+
+    &__right {
+      @include tablet {
+        @include flex(12px, space-between, end);
+        flex-direction: column;
+      }
+
+      @include mobile {
+        @include flex(12px, space-between, start);
+      }
     }
 
     &__icon {
@@ -491,9 +524,9 @@
     @include boxPage(15px, 12px 24px);
     box-shadow: none;
 
-    &__left,
-    &__right {
-      @include flex(12px, space-between);
+    @include mobile {
+      @include flex(12px, space-between, center);
+      flex-direction: column;
     }
 
     &__icon {
@@ -511,6 +544,10 @@
         font-weight: 500;
         line-height: 23.44px;
         text-align: left;
+
+        @include mobile {
+          text-align: center;
+        }
       }
       p {
         font-size: 14px;

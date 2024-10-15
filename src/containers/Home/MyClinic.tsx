@@ -50,7 +50,7 @@ const MyClinic = (props: Props) => {
                   </div>
                 </div>
                 <div className="my-clinic__item__button">
-                  <ButtonCustom className="!h-[48px] !min-h-[48px] !min-w-[150px]">
+                  <ButtonCustom className="!h-[48px] !min-w-[150px]">
                     Đặt hẹn
                   </ButtonCustom>
                 </div>

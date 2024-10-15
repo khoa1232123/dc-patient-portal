@@ -57,3 +57,77 @@
   padding: $padding;
   background: $bg;
 }
+
+$mobile-width: 768px;
+$tablet-width: 992px;
+$smallDesktop-width: 1200px;
+$mediumDesktop-width: 1600px;
+
+@mixin mobile {
+  @media only screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin smallDesktop {
+  @media only screen and (max-width: $smallDesktop-width) {
+    @content;
+  }
+}
+
+@mixin mediumDesktop {
+  @media only screen and (max-width: $mediumDesktop-width) {
+    @content;
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+@include mediumDesktop {
+  .xl-none {
+    display: none;
+  }
+  .xl-block {
+    display: block;
+  }
+}
+
+@include smallDesktop {
+  .lg-none {
+    display: none;
+  }
+  .lg-block {
+    display: block;
+  }
+}
+
+@include tablet {
+  .md-none {
+    display: none;
+  }
+  .md-block {
+    display: block;
+  }
+}
+
+@include mobile {
+  .sm-none {
+    display: none;
+  }
+
+  .sm-block {
+    display: block;
+  }
+}

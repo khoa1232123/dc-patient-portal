@@ -21,7 +21,8 @@ const QuickAppointmentPage = (props: Props) => {
         <div className="wrapper">
           <Row>
             <Col
-              span={8}
+              xs={24}
+              lg={8}
               hidden={logged}
               style={{ display: logged ? "none" : "flex" }}
             >
@@ -34,19 +35,28 @@ const QuickAppointmentPage = (props: Props) => {
                 </p>
               </div>
             </Col>
-            <Col span={logged ? 24 : 16}>
+            <Col span={logged ? 24 : 16} xs={24} lg={logged ? 24 : 16}>
               <div className="appointment-page__right">
                 <Appointment />
               </div>
-                {!logged && (
-                  <div className="flex justify-center items-center pt-[24px]">
-                    <Image src={logoMini} alt="logo" width={24} />
-                    <p>
-                      © 2024 - Bản quyền cung cấp bởi Công Ty Cổ Phần Deepcare
-                      Việt Nam
-                    </p>
-                  </div>
-                )}
+              {!logged && (
+                <div className="flex justify-center items-center pt-[24px]">
+                  <p className="text-center text-white">
+                    <Image
+                      src={logoMini}
+                      alt="logo"
+                      width={24}
+                      style={{
+                        display: "inline-block",
+                        marginRight: "8px",
+                        marginBottom: "4px",
+                      }}
+                    />
+                    © 2024 - Bản quyền cung cấp bởi Công Ty Cổ Phần Deepcare
+                    Việt Nam
+                  </p>
+                </div>
+              )}
             </Col>
           </Row>
         </div>

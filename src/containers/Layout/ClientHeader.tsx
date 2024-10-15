@@ -2,10 +2,12 @@ import { avatarImage } from "@/assets/images";
 import { LogoSVG, NotificationIcon, PhoneIcon } from "@/assets/svg";
 import { dataMenu, dataMenu2 } from "@/constants/dataExams";
 import { useAuthContext } from "@/contexts/AuthContext";
-import { Dropdown, Layout, Menu } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
+import { Button, Drawer, Dropdown, Layout, Menu } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { MenuProps } from "rc-menu";
+import { useState } from "react";
 
 const { Header } = Layout;
 const items: MenuProps["items"] = [
@@ -29,6 +31,15 @@ type Props = {
 
 const ClientHeader = ({ className = "" }: Props) => {
   const { logged, setLogged } = useAuthContext();
+  const [open, setOpen] = useState(false);
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
 
   return (
     <Header
@@ -45,7 +56,6 @@ const ClientHeader = ({ className = "" }: Props) => {
       )}
       <div className={`client-header__center`}>
         <Menu
-          theme="dark"
           mode="horizontal"
           defaultSelectedKeys={["1"]}
           items={logged ? dataMenu2 : dataMenu}
@@ -56,9 +66,9 @@ const ClientHeader = ({ className = "" }: Props) => {
       <div className="client-header__right">
         {logged ? (
           <>
-            <div className="client-header__btn">
+            <div className="client-header__btn lg-none">
               <button
-                className="base-btn !h-[42px] !min-h-0"
+                className="base-btn !h-[42px]"
                 onClick={() => setLogged(false)}
               >
                 Tải ứng dụng
@@ -80,7 +90,7 @@ const ClientHeader = ({ className = "" }: Props) => {
                 <NotificationIcon width={24} height={24} />
                 <div className="client-header__user__notification__dot"></div>
               </div>
-              <div className="client-header__user__avatar">
+              <div className="client-header__user__avatar lg-none">
                 <Dropdown menu={{ items }} trigger={["click"]}>
                   <Image
                     src={avatarImage}
@@ -91,6 +101,13 @@ const ClientHeader = ({ className = "" }: Props) => {
                 </Dropdown>
               </div>
             </div>
+            <Button
+              type="primary"
+              className="client-header__open-drawer shadow-lg"
+              onClick={showDrawer}
+            >
+              <MenuOutlined width={32} height={32} />
+            </Button>
           </>
         ) : (
           <>
@@ -110,9 +127,34 @@ const ClientHeader = ({ className = "" }: Props) => {
                 Đăng nhập
               </button>
             </div>
+
+            <Button
+              type="primary"
+              className="client-header__open-drawer shadow-lg"
+              onClick={showDrawer}
+            >
+              <MenuOutlined width={32} height={32} />
+            </Button>
           </>
         )}
       </div>
+      <Drawer onClose={onClose} open={open}>
+        <Menu
+          mode="vertical"
+          defaultSelectedKeys={["1"]}
+          items={logged ? dataMenu2 : dataMenu}
+          style={{ flex: 1, minWidth: 0 }}
+          className="client-header__menu__mobile"
+        />
+        <div className="client-header__btn">
+          <button
+            className="base-btn !h-[42px] w-full mt-4"
+            onClick={() => setLogged(false)}
+          >
+            Tải ứng dụng
+          </button>
+        </div>
+      </Drawer>
     </Header>
   );
 };

@@ -47,7 +47,7 @@ const Appointment = ({}: Props) => {
       onFinish={handleFinish}
     >
       <Row gutter={22} className="gap-y-4">
-        <Col span={12}>
+        <Col sm={24} md={12}>
           <h2 className="appointment-page__title">Thông tin khám</h2>
           <Row gutter={12} className="gap-y-4 mb-4">
             <Col span={12}>
@@ -162,7 +162,7 @@ const Appointment = ({}: Props) => {
             </Col>
           </Row>
         </Col>
-        <Col span={12}>
+        <Col sm={24} md={12}>
           <h2 className="appointment-page__title">Thời gian khám</h2>
           <Row style={{ gap: "12px", marginBottom: "12px" }}>
             <Col span={24}>

@@ -27,6 +27,20 @@ const MyCarousel = (props: Props) => {
     slidesToShow: 3,
     slidesToScroll: 2,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      }, {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }]
   };
   return (
     <Carousel centerPadding={"50px"} {...settings} className="my-carousel">

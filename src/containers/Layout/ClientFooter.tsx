@@ -12,16 +12,16 @@ type Props = {
 };
 
 const ClientFooter = ({ className }: Props) => {
-  const {logged} = useAuthContext();
+  const { logged } = useAuthContext();
 
-  if(!logged) return;
+  if (!logged) return;
 
   return (
     <footer className={`client-footer ${className}`}>
       <div className="client-footer__top">
         <div className="wrapper">
-          <Row>
-            <Col span={9}>
+          <Row style={{ rowGap: 20 }}>
+            <Col span={9} xs={24} lg={9}>
               <div className="client-footer__item">
                 <div className="client-footer__logo">
                   <Link href={"#"}>
@@ -49,7 +49,7 @@ const ClientFooter = ({ className }: Props) => {
               </div>
             </Col>
             {dataMenuFooter.map((item) => (
-              <Col span={5} key={item.key}>
+              <Col span={5} key={item.key} xs={24} md={8} lg={5}>
                 <h3 className="client-footer__title">{item.title}</h3>
                 <ul className="client-footer__menu">
                   {item.menu.map((it) => (

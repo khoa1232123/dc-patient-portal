@@ -1,3 +1,11 @@
+
+.g-body {
+  padding-top: 86px;
+
+  @include mobile {
+    padding-top: 64px;
+  }
+}
 .client-header {
   background: linear-gradient(
     180deg,
@@ -12,6 +20,19 @@
   align-items: center;
   z-index: 99;
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1019607843);
+
+  @include mobile {
+    padding: 0px 12px !important;
+    height: 64px !important;
+  }
+
+  &__logo {
+    @include mobile {
+      svg {
+        width: 100px;
+      }
+    }
+  }
 
   $this: &;
 
@@ -35,7 +56,7 @@
           font-size: 16px;
           font-weight: 500;
           border-radius: 10px !important;
-          padding: 0 10px;
+          padding: 0 8px;
 
           &.ant-menu-item-selected {
             background: transparent;
@@ -53,6 +74,10 @@
 
       &__right {
         gap: 16px;
+
+        @include mobile {
+          gap: 8px;
+        }
       }
 
       &__btn {
@@ -69,6 +94,11 @@
         }
         &__text {
           color: black;
+          font-size: 16px;
+
+          @include mobile {
+            font-size: 12px;
+          }
         }
 
         &__phone {
@@ -79,6 +109,10 @@
           );
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+
+          @include mobile {
+            font-size: 18px;
+          }
         }
       }
     }
@@ -92,11 +126,94 @@
     display: flex;
     align-items: center;
     gap: 36px;
+
+    @include mobile {
+      gap: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .client-header__btn {
+        button {
+          height: 42px;
+          min-width: 150px;
+        }
+      }
+
+      .client-header__hotline__icon {
+        width: 42px;
+        height: 42px;
+      }
+
+      .client-header__hotline__text {
+        font-size: 12px;
+      }
+      .client-header__hotline__phone {
+        font-size: 18px;
+      }
+    }
+
+  }
+
+  &__open-drawer {
+    border: none !important;
+    display: none !important;
+    background: linear-gradient(239.52deg, #5cdae8 -4.24%, #547bfe 50.45%) !important;
+    padding: 0 8px !important;
+    width: 42px !important;
+    height: 42px !important;
+    
+    @include smallDesktop {
+      display: flex !important;
+      gap: 16px;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: white
+    }
   }
 
   &__menu {
     background: transparent !important;
     height: 56px;
+    border: none !important;
+
+    li {
+      background: transparent !important;
+      border: none !important;
+
+      &.ant-menu-item-selected {
+        span {
+        color: white;
+      }
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    @include smallDesktop {
+      display: none !important;
+    }
+
+    &__mobile {
+      border: none !important;
+      li {
+        padding: 0px !important;
+        background-color: transparent !important;
+        margin: 0px !important;
+
+        &.ant-menu-item-selected {
+          span {
+            @include textGradient;
+          }
+        }
+      }
+    }
+
     li {
       line-height: 1;
       font-size: 18px;
@@ -143,6 +260,10 @@
     display: flex;
     align-items: center;
     gap: 12px;
+
+    @include mobile {
+      gap: 8px;
+    }
 
     &__icon {
       display: flex;
@@ -271,7 +392,7 @@
 
 .breakcrumb {
   padding-top: 20px;
-  padding-bottom: 24px;
+  padding-bottom: 20px;
   backdrop-filter: blur(0px);
   background: linear-gradient(
     180deg,
@@ -282,6 +403,10 @@
   font-weight: 500;
   line-height: 24px;
   text-align: left;
-  color: #FFFFFF;
+  color: #ffffff;
 
+  @include mobile {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }

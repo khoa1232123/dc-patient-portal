@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`pt-[86px]`}>
+      <body className={`g-body`}>
         <AntdProvider>{children}</AntdProvider>
       </body>
     </html>

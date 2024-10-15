@@ -17,7 +17,7 @@ const ClientLayout = ({ children }: Props) => {
   return (
     <>
       <Spin spinning={loading} />
-      <ClientHeader />
+      {/* <ClientHeader /> */}
       <main className="h-[100vh]">{children}</main>
     </>
   );

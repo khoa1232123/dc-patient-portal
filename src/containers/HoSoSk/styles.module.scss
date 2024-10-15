@@ -1,0 +1,187 @@
+.health-record {
+    .wrap-complete {
+
+        background-image: url("../../assets/images/background-health-record.jpg");
+
+        .wrap-complete-content {
+            @apply h-[143px] bg-white rounded-[20px] p-[24px] flex gap-[24px];
+
+            .content-icon {
+                @apply h-[95px] w-[95px] rounded-full bg-[#F5F6FA] justify-center flex align-middle items-center;
+
+                svg {
+                    @apply w-[48px] h-[49.13px];
+                }
+            }
+
+            .content-text {
+
+                .text-header {
+                    @apply text-[#121831] text-[28px] font-semibold;
+                }
+
+                .text-des {
+                    @apply text-[#121831] text-[20px] font-medium;
+                }
+
+                .text-link {
+                    cursor: pointer;
+                    background: linear-gradient(115.17deg, #5DE1E7 -18.74%, #2F75FE 91.51%);
+                    -webkit-background-clip: text; // Chỉ định phần nền áp dụng cho chữ
+                    -webkit-text-fill-color: transparent;
+                    font-size: 16px;
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+
+            }
+        }
+    }
+}
+
+.wrap-main {
+    @apply bg-[#F5F6FA];
+
+    :global {
+        .ant-tabs-content-holder {
+            display: none;
+        }
+    }
+
+
+}
+
+.main-left {
+    @apply bg-white rounded-[10px] p-[24px]   max-h-[736px] h-full;
+
+    * {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    :global {
+
+        .ant-tabs-nav {
+            width: 100%;
+        }
+
+        .ant-tabs-tab-active {
+            @apply bg-[#F5F6FA] rounded-[5px];
+        }
+
+        .ant-tabs-tab {
+            @apply h-[75px]
+        }
+
+        :where(.css-dev-only-do-not-override-ccdg5a).ant-tabs .ant-tabs-ink-bar {
+            background: linear-gradient(115.17deg, #5DE1E7 -18.74%, #2F75FE 91.51%) !important;
+            width: 4px;
+            border-radius: 10px;
+        }
+
+        .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+            background: linear-gradient(143.91deg, #5DE1E7 18.17%, #558DFA 78.92%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            text-shadow: none;
+        }
+    }
+}
+
+.main-right {
+
+    @apply  max-h-[736px]  h-full;
+
+    :global {
+
+        :where(.css-dev-only-do-not-override-ccdg5a).ant-tabs-left>.ant-tabs-nav .ant-tabs-ink-bar,
+        :where(.css-dev-only-do-not-override-ccdg5a).ant-tabs-left>div>.ant-tabs-nav .ant-tabs-ink-bar {
+            right: -2px;
+        }
+
+        .ant-tabs-nav-list {
+            // border-right: 2px solid white;
+            margin: 0 !important;
+        }
+
+        .ant-tabs-tab-btn {
+            align-items: unset !important;
+            font-weight: 500 !important;
+            font-size: 16px;
+            color: #121831 !important;
+        }
+    }
+
+    .time-line {
+        @apply flex w-full;
+    }
+
+    .line {
+        @apply max-h-[670px] overflow-auto;
+    }
+
+    .list-time {
+        @apply ml-[25px] gap-[16px] flex flex-col w-full overflow-auto max-h-[670px];
+    }
+
+    .time-line-header {
+        @apply font-[600] text-[20px] text-[#333333]
+    }
+
+    
+
+    .time {
+        @apply flex gap-[50px];
+    }
+    .time-item {
+        @apply h-[100px] bg-white rounded-[15px] w-full px-[24px] py-[12px] flex justify-between items-center cursor-pointer relative;
+
+        .item-time {
+            @apply font-[600] text-[20px] text-[#333333]
+        }
+
+        .item-sid {
+            @apply font-medium text-[16px] text-[#333333]
+        }
+
+        .item-des {
+            @apply font-normal text-[16px] text-[#333333]
+        }
+    }
+
+    .time-item::after{
+        position: absolute;
+        top: 0;
+        left: -25px;
+        height: 120px;
+        content: "";
+        width: 2px;
+        background-color: white;
+        animation: alternate 1;
+    }
+
+    .time:last-child .time-item::after {
+        height: 100px; 
+    }
+
+    .active .time-item::after{
+        background-color:#4080FF; 
+
+    }
+
+    .item-kq {
+        background: linear-gradient(143.91deg, #5DE1E7 18.17%, #558DFA 78.92%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        text-shadow: none;
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+}
+
+.layout {
+    padding: 33.48px 136px 36px 136px;
+}

@@ -1,0 +1,134 @@
+.cau-chuyen-sk {
+    :global {
+
+        .ant-tabs-tab-active {
+            @apply bg-[#F5F6FA] rounded-[5px];
+        }
+
+        :where(.css-dev-only-do-not-override-ccdg5a).ant-tabs .ant-tabs-tab+.ant-tabs-tab {
+            margin: 0 0 0 24px;
+        }
+
+        .ant-tabs-tab-btn {
+
+            @apply px-[24px] !text-[#868CAA];
+        }
+
+        .ant-tabs-tab {
+            // @apply h-[75px]
+        }
+
+        :where(.css-dev-only-do-not-override-ccdg5a).ant-tabs .ant-tabs-ink-bar {
+            background: linear-gradient(115.17deg, #5DE1E7 -18.74%, #2F75FE 91.51%) !important;
+            width: 4px;
+            border-radius: 10px;
+        }
+
+        .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+            background: linear-gradient(143.91deg, #5DE1E7 18.17%, #558DFA 78.92%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            text-shadow: none;
+        }
+    }
+
+    .header {
+        @apply text-[28px] text-[#121831] font-medium;
+    }
+
+   
+}
+
+.des {
+    font-size:  16px;
+    font-weight: 400;
+    padding-right: 84px;
+    color: #333333;
+    margin-bottom: 24px
+    // @apply text-[16px] text-[#333333] font-normal pr-[90px];
+}
+
+.list-item {
+    @apply flex flex-col gap-[24px] max-h-[600px] overflow-auto;
+    
+    .item-info {
+        @apply flex gap-[24px] text-[#333333] text-[14px];
+    
+        .item-location {
+            @apply border-l border-[#000000] pl-[24px];
+        }
+    }
+
+
+    .item {
+
+        h4 {
+            @apply text-[#868CAA] text-[16px];
+        }
+    }
+}
+
+.detail-left {
+    @apply flex items-center;
+}
+
+.detail-right {
+    @apply flex items-center gap-[12px];
+
+    .right-total {
+        width: 24px;
+        height: 24px;
+        border-radius: 100px;
+        background-color: #F5F6FA;
+        color: #537AFD;
+        display: flex;
+        justify-items: center;
+        justify-content: center;
+        font-weight: 700;
+
+    }
+}
+
+.icon-kl {
+    svg {
+        height: 24px;
+        width: 20px;
+    }
+}
+
+.left-text {
+    h5 {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+        color: #333333;
+    }
+
+    h6 {
+        font-size: 14px;
+        font-weight: 400;
+        color: #333333;
+    }
+}
+
+
+.item-detail {
+    @apply py-[20px] px-[24px] rounded-[15px] bg-white  mt-[12px] flex justify-between items-center;
+}
+
+
+.left-icon {
+    @apply w-[36px] h-[36px] flex items-center justify-center rounded-full mr-[6.5px];
+}
+
+.right-xct {
+    cursor: pointer;
+    background: linear-gradient(115.17deg, #5DE1E7 -18.74%, #2F75FE 91.51%);
+    -webkit-background-clip: text; // Chỉ định phần nền áp dụng cho chữ
+    -webkit-text-fill-color: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

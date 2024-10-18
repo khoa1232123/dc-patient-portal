@@ -6,6 +6,7 @@ import { Col, Row, Tabs } from "antd";
 import { useState } from "react";
 import XetNghiem from "./compoments/XetNghiem";
 import CauChuyenSk from "./compoments/CauChuyenSk/CauChuyenSk";
+import ChiSoSucKhoe from "./compoments/ChiSoSucKhoe";
 
 type Props = {};
 
@@ -38,7 +39,7 @@ const HoSoSk = (props: Props) => {
     
 
       case "health-index":
-        return "health-index"
+        return <ChiSoSucKhoe />
 
       default:
         return "health-story"

@@ -405,6 +405,17 @@
   text-align: left;
   color: #ffffff;
 
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: #fff;
+      opacity: 0.9;
+    }
+  }
+
   @include mobile {
     padding-top: 10px;
     padding-bottom: 10px;

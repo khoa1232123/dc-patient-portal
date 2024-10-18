@@ -53,3 +53,9 @@ export { default as ArrowFromRightIcon } from "./ArrowFromRight.svg";
 export { default as ArrowUpIcon } from "./ArrowUp.svg";
 
 export { default as LocationPointIcon } from "./location-point.svg";
+
+export { default as BodyFatIcon } from "./bodyFat.svg";
+export { default as BodyHeightIcon } from "./bodyHeight.svg";
+export { default as BodyNormalIcon } from "./bodyNormal.svg";
+export { default as BodyRunIcon } from "./bodyRun.svg";
+export { default as HeartIcon } from "./heart.svg";

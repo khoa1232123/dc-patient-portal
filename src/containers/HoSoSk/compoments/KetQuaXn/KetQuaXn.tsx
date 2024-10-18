@@ -1,7 +1,7 @@
-import { ArrowDown, ArrowDownRight, ThuocUong, XetNghiem } from "@/assets/svg";
-import React, { useEffect, useState } from "react";
+import { ArrowDown, ArrowDownRight, XetNghiem } from "@/assets/svg";
+import { Table } from "antd";
+import { useState } from "react";
 import styles from "./styles.module.scss";
-import { Col, Row, Table, Tabs } from "antd";
 
 export const sharedOnCell = (record:any, index:any) => {
   if (record?.children?.length > 0) {
@@ -12,12 +12,6 @@ export const sharedOnCell = (record:any, index:any) => {
 };
 
 const KetQuaXn = ({ info, setOpen }: { info: any; setOpen?: any }) => {
-  const [items, setItems] = useState<any>(null);
-
-  const onChange = (key: string) => {
-    console.log(key);
-  };
-
   const dataSource = [
     {
       key: "1",
@@ -109,11 +103,6 @@ const KetQuaXn = ({ info, setOpen }: { info: any; setOpen?: any }) => {
       with: 200,
     },
   ];
-
-  console.log(`columns.reduce(
-            (accumulator:any, currentValue:any) => accumulator?.width + currentValue,
-            0,
-          )`, );
 
   return (
     <div className={styles["wrap-container"]}>

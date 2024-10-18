@@ -251,39 +251,47 @@ export const dataClinics = [
 
 export const dataMenu = [
   {
-    key: 1,
+    key: "/dat-kham",
     label: "Đặt khám",
+    link: "/dat-kham",
   },
   {
-    key: 2,
+    key: "/ho-so-suc-khoe",
     label: "Hồ sơ sức khoẻ",
+    link: "#",
   },
   {
-    key: 3,
+    key: "/hoi-dap-y-te",
     label: "Hỏi đáp y tế",
+    link: "#",
   },
 ];
 
 export const dataMenu2 = [
   {
-    key: 1,
+    key: "/",
     label: "Trang chủ",
+    link: "/",
   },
   {
-    key: 2,
+    key: "/dat-kham",
     label: "Đặt khám",
+    link: "/dat-kham",
   },
   {
-    key: 3,
+    key: "/ho-so-suc-khoe",
     label: "Hồ sơ sức khoẻ",
+    link: "/ho-so-suc-khoe",
   },
   {
-    key: 4,
+    key: "/hoi-dap-y-te",
     label: "Hỏi đáp y tế",
+    link: "#",
   },
   {
-    key: 5,
+    key: "/quan-ly-tai-lieu",
     label: "Quản lý tài liệu",
+    link: "#",
   },
 ];
 

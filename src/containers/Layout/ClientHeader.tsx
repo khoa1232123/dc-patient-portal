@@ -6,8 +6,9 @@ import { MenuOutlined } from "@ant-design/icons";
 import { Button, Drawer, Dropdown, Layout, Menu } from "antd";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { MenuProps } from "rc-menu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const { Header } = Layout;
 const items: MenuProps["items"] = [
@@ -30,8 +31,16 @@ type Props = {
 };
 
 const ClientHeader = ({ className = "" }: Props) => {
+  const route = useRouter();
+  const pathname = usePathname();
   const { logged, setLogged } = useAuthContext();
   const [open, setOpen] = useState(false);
+  const [selectedMenu, setSelectedMenu] = useState("/");
+
+  useEffect(() => {
+    const dataMenuMain = (logged ? dataMenu2 : dataMenu);
+    setSelectedMenu(dataMenuMain.findLast(it => pathname.includes(it.key))?.key || "/");
+  }, [pathname])
 
   const showDrawer = () => {
     setOpen(true);
@@ -57,11 +66,19 @@ const ClientHeader = ({ className = "" }: Props) => {
       <div className={`client-header__center`}>
         <Menu
           mode="horizontal"
-          defaultSelectedKeys={["1"]}
-          items={logged ? dataMenu2 : dataMenu}
+          // defaultSelectedKeys={["1"]}
+          selectedKeys={[selectedMenu]}
+          onClick={({ key }) => setSelectedMenu(key)}
+          // items={logged ? dataMenu2 : dataMenu}
           style={{ flex: 1, minWidth: 0 }}
           className="client-header__menu"
-        />
+        >
+          {(logged ? dataMenu2 : dataMenu).map(item => (
+            <Menu.Item key={item.key}>
+              <Link href={item?.link}>{item.label}</Link>
+            </Menu.Item>
+          ))}
+        </Menu>
       </div>
       <div className="client-header__right">
         {logged ? (

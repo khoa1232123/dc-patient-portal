@@ -1,65 +1,28 @@
 import React, { useState } from "react";
 import styles from "../styles.module.scss";
 import { ArrowRight } from "@/assets/svg";
+import { useRouter } from "next/navigation";
 
 const dataTime = [
   {
+    id: "120",
     time: `11/11/2023`,
     SID: `111120230`,
     des: `Xét nghiệm máu, nước tiểu`,
     key: "1111qwew",
   },
   {
+    id: "123",
     time: `11/11/2023`,
     SID: `111120230`,
     des: `Xét nghiệm máu, nước tiểu`,
     key: "2343434",
   },
-//   {
-//     time: `11/11/2023`,
-//     SID: `111120230`,
-//     des: `Xét nghiệm máu, nước tiểu`,
-//     key: "3dsfsđs",
-//   },
-//   {
-//     time: `11/11/2023`,
-//     SID: `111120230`,
-//     des: `Xét nghiệm máu, nước tiểu`,
-//     key: "4sdfsdf",
-//   },
-//   {
-//     time: `11/11/2023`,
-//     SID: `111120230`,
-//     des: `Xét nghiệm máu, nước tiểu`,
-//     key: "5sdfsfsd",
-//   },
-//   {
-//     time: `11/11/2023`,
-//     SID: `111120230`,
-//     des: `Xét nghiệm máu, nước tiểu`,
-//     key: "5sdfsfsd",
-//   },
-//   {
-//     time: `11/11/2023`,
-//     SID: `111120230`,
-//     des: `Xét nghiệm máu, nước tiểu`,
-//     key: "5sdfssdsfsd",
-//   },
-//   {
-//     time: `11/11/2023`,
-//     SID: `111120230`,
-//     des: `Xét nghiệm máu, nước tiểu`,
-//     key: "5sdfssscfsd",
-//   },
-//   {
-//     time: `11/11/2023`,
-//     SID: `111120230`,
-//     des: `Xét nghiệm máu, nước tiểu`,
-//     key: "5sdfsssfsd",
-//   },
 ];
+
 const XetNghiem = () => {
   const [key, setkey] = useState(dataTime[0].key);
+  const route = useRouter();
 
   return (
     <React.Fragment>
@@ -84,7 +47,10 @@ const XetNghiem = () => {
 
                 <div
                   className={styles["time-item"]}
-                  onClick={() => setkey(obj.key)}
+                  onClick={() => {
+                    setkey(obj.key)
+                    route.push(`/ho-so-suc-khoe/ket-qua-xet-nghiem/${obj.id}`)
+                  }}
                 >
                   <div>
                     <div className={styles["item-time"]}>{obj.time}</div>

@@ -22,32 +22,6 @@ const ChanDoanHA = ({ info, setOpen }: { info: any; setOpen?: any }) => {
     console.log(key);
   };
 
-  let renderThuoc = (props: any) => {
-    return (
-      <div className={styles["wrap-table"]}>
-        <div className={styles["table-header"]}>
-          <Row>
-            <Col span={10}>Tên thuốc hoạt chất</Col>
-            <Col span={4}>Số lượng</Col>
-            <Col span={10}>Cách dùng</Col>
-          </Row>
-        </div>
-        <div className={styles["table-body"]}>
-          {props?.map((obj: any) => {
-            return (
-              <div className={styles["table-row"]}>
-                <Row>
-                  <Col span={10}>{obj.name}</Col>
-                  <Col span={4}>{obj.sl}</Col>
-                  <Col span={10}>{obj.cd}</Col>
-                </Row>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    );
-  };
   useEffect(() => {
     setItems([
       {

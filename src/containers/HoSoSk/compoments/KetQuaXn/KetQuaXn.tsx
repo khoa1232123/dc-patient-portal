@@ -3,7 +3,7 @@ import { Table } from "antd";
 import { useState } from "react";
 import styles from "./styles.module.scss";
 
-export const sharedOnCell = (record:any, index:any) => {
+export const sharedOnCell = (record: any, index: any) => {
   if (record?.children?.length > 0) {
     return {
       colSpan: 0,
@@ -11,7 +11,13 @@ export const sharedOnCell = (record:any, index:any) => {
   }
 };
 
-const KetQuaXn = ({ info, setOpen }: { info: any; setOpen?: any }) => {
+type Props = { 
+  info: any; 
+  setOpen?: any; 
+  disableClose?: boolean 
+};
+
+const KetQuaXn = ({ info, setOpen, disableClose = false }: Props) => {
   const dataSource = [
     {
       key: "1",
@@ -152,14 +158,16 @@ const KetQuaXn = ({ info, setOpen }: { info: any; setOpen?: any }) => {
           }}
         />
       </div>
-      <p
-        className="cursor-pointer my-[12px] bg-[#F5F6FA] text-[16px] h-[52px] flex justify-center  align-middle items-center"
-        onClick={() => {
-          setOpen && setOpen(false);
-        }}
-      >
-        Thoát
-      </p>
+      {!disableClose && (
+        <p
+          className="cursor-pointer my-[12px] bg-[#F5F6FA] text-[16px] h-[52px] flex justify-center  align-middle items-center"
+          onClick={() => {
+            setOpen && setOpen(false);
+          }}
+        >
+          Thoát
+        </p>
+      )}
     </div>
   );
 };

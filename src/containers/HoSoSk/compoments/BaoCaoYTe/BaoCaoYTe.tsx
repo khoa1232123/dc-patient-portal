@@ -131,7 +131,7 @@ const BaoCaoYTe = ({ info }: { info: any }) => {
         </p>
         <p className="flex mt-[24px]">
           <span>Lưu ý:</span>
-          <h4 className="text-[#868CAA] text-[16px]">Hẹn 02 tuần tái khám hoặc có diễn biến gì đặc biệt đến bệnh viện ngay</h4>
+          <span className="text-[#868CAA] text-[16px]">Hẹn 02 tuần tái khám hoặc có diễn biến gì đặc biệt đến bệnh viện ngay</span>
         </p>
       </div>
     </div>

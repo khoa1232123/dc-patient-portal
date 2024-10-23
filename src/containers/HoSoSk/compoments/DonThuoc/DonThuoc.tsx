@@ -3,7 +3,13 @@ import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import { Col, Row, Tabs } from "antd";
 
-const DonThuoc = ({ info, setOpen }: { info: any ,setOpen?: any }) => {
+type Props = { 
+  info: any; 
+  setOpen?: any; 
+  disableClose?: boolean 
+};
+
+const DonThuoc = ({ info, setOpen, disableClose = false }: Props) => {
   const [items, setItems] = useState<any>(null);
 
   const onChange = (key: string) => {
@@ -135,12 +141,13 @@ const DonThuoc = ({ info, setOpen }: { info: any ,setOpen?: any }) => {
         <span className="text-[#121831] font-medium">Lưu ý: </span>Hẹn 02 tuần tái khám hoặc có diễn biến gì đặc biệt
         đến bệnh viện ngay
       </p>
-      <p className="cursor-pointer my-[12px] bg-[#F5F6FA] text-[16px] h-[52px] flex justify-center  align-middle items-center" onClick={()=>{
-         setOpen && setOpen(false)
-      }}>
-        Thoát
-      </p>
-
+      {!disableClose && (
+        <p className="cursor-pointer my-[12px] bg-[#F5F6FA] text-[16px] h-[52px] flex justify-center  align-middle items-center" onClick={()=>{
+          setOpen && setOpen(false)
+        }}>
+          Thoát
+        </p>
+      )}
     </div>
   );
 };

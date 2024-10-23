@@ -30,8 +30,10 @@ export { default as XrayWhiteIcon } from "./XrayWhite.svg";
 
 export { default as HeartMedicalWhiteIcon } from "./heart-medical-white.svg";
 export { default as HeartMedicalIcon } from "./heart-medical.svg";
+export { default as HeartMedicalColorIcon } from "./heart-medical-color.svg";
 export { default as UserWhiteIcon } from "./userWhite.svg";
-export { default as UserColorIcon } from "./user.svg";
+export { default as UserColorIcon } from "./userColor.svg";
+export { default as UserIcon } from "./user.svg";
 export { default as LogoSVG } from "./logo.svg";
 export { default as Logo2SVG } from "./logo-2.svg";
 export { default as NotificationIcon } from "./notification.svg";
@@ -45,6 +47,7 @@ export { default as TestTubeWhiteIcon } from "./Test-Tube-White.svg";
 export { default as LockBlueIcon } from "./LockBlue.svg";
 export { default as ArrowLeftIcon } from "./Arrow-Left.svg";
 
+export { default as HospitalIcon } from "./hospital.svg";
 export { default as HospitalWhiteIcon } from "./hospitalWhite.svg";
 export { default as BlisterPillOvalIcon } from "./BlisterPillOval.svg";
 export { default as DocumentOrangeIcon } from "./DocumentOrange.svg";

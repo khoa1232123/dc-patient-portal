@@ -1,0 +1,174 @@
+.medical-history {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background-color: #f5f6fa;
+
+  &__title {
+    @include title;
+  }
+
+  &__filter {
+    @include boxPage(10px, 12px 16px);
+    @include flex(12px);
+    margin-bottom: 6px;
+
+    &__text {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      text-align: left;
+    }
+
+    &__select {
+      flex: 1;
+      .ant-select,
+      .ant-picker {
+        height: 42px;
+      }
+    }
+  }
+
+  &__content {
+    padding: 6px;
+    @include boxPage(15px, 24px);
+    @include flex(12px, start, start);
+    flex-direction: column;
+    height: 100%;
+
+    &__title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: left;
+    }
+  }
+
+  &__item {
+    width: 100%;
+
+    // &__title {
+    //   @apply mb-2 font-medium;
+    // }
+    // &__wrap {
+    @apply flex flex-col text-center p-[12px] relative;
+
+    background: #f5f6fa;
+    border-radius: 30px;
+    gap: 12px;
+    p {
+      @apply text-white font-normal text-[16px] text-center mb-0 relative z-10;
+    }
+
+    &__title {
+      @apply flex items-center gap-[8px] font-semibold;
+
+      h4 {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: left;
+        color: #121831;
+      }
+
+      &__icon {
+        @apply flex items-center justify-center w-[30px] h-[30px] rounded-[10px];
+        background: #4080ff;
+
+        color: white;
+      }
+    }
+    // }
+
+    &__date {
+      @apply flex justify-center items-center;
+      padding: 12px 12px;
+      font-size: 20px;
+      font-weight: 600;
+      border-radius: 10px;
+      background: #fff;
+
+      &__left,
+      &__right {
+        @apply flex flex-1 justify-start items-center gap-2 z-10;
+
+        span {
+          line-height: 1;
+          font-size: 16px;
+          color: #4080ff;
+        }
+      }
+
+      &__icon {
+        @apply w-[16px] h-[16px];
+      }
+    }
+
+    &__list {
+      @apply flex gap-y-[6px] px-[12px];
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__item {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+      color: #4f5675;
+    }
+
+    &__btn {
+      text-align: right;
+      button {
+        border: 1px solid #e75d5d;
+        width: 100px;
+        height: 32px;
+        padding: 0px 0px;
+        gap: 10px;
+        border-radius: 8px;
+        opacity: 0px;
+        color: #e75d5d;
+        font-weight: 500;
+        font-size: 14px;
+
+        &.btn-result {
+          @include bgGradient;
+          border: none;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.kq-kham {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background: #f5f6fa;
+
+  &__title {
+    @include title;
+  }
+
+  &__tabs {
+    margin-bottom: 24px;
+    .ant-tabs-nav {
+      margin-bottom: 16px !important;
+    }
+    .ant-menu, .ant-tabs-nav {
+      background: transparent !important;
+      border: none !important;
+      margin-left: -16px;
+      .ant-tabs-tab-active {
+          @include textGradient;
+        }
+    }
+  }
+
+  &__content {
+    background: white;
+    padding: 24px;
+    border-radius: 15px;
+  }
+}

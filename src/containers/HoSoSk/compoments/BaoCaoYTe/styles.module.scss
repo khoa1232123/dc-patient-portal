@@ -1,6 +1,6 @@
 .wrap-container {
     .header {
-        @apply flex flex-col items-center;
+        @apply flex flex-col items-center mb-6;
         .header-icon {
             @apply  w-[72px] h-[72px] bg-[#FFA24C] rounded-full flex items-center justify-center content-center;
 
@@ -48,6 +48,7 @@
 
     .thong-tin-kham__left {
         width: 100%;
+        flex: 1;
     }
     .thong-tin-kham__right {
         padding: 24px;
@@ -66,7 +67,7 @@
 }
 
 .thong-tin-kham__right {
-    @apply mr-[13px] text-[16px];;
+    @apply text-[16px];;
 }
 
 .item-2 {

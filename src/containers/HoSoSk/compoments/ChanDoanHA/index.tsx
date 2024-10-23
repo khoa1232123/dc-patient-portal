@@ -15,7 +15,13 @@ import {
   CDHA04Image,
 } from "@/assets/images";
 
-const ChanDoanHA = ({ info, setOpen }: { info: any; setOpen?: any }) => {
+type Props = { 
+  info: any; 
+  setOpen?: any; 
+  disableClose?: boolean 
+};
+
+const ChanDoanHA = ({ info, setOpen, disableClose = false }: Props) => {
   const [items, setItems] = useState<any>(null);
 
   const onChange = (key: string) => {
@@ -87,14 +93,16 @@ const ChanDoanHA = ({ info, setOpen }: { info: any; setOpen?: any }) => {
       <div className={styles["tab"]}>
         <Tabs items={items} onChange={onChange} />
       </div>
-      <p
-        className="cursor-pointer my-[12px] bg-[#F5F6FA] text-[16px] h-[52px] flex justify-center  align-middle items-center rounded-[10px]"
-        onClick={() => {
-          setOpen && setOpen(false);
-        }}
-      >
-        Thoát
-      </p>
+      {!disableClose && (
+        <p
+          className="cursor-pointer my-[12px] bg-[#F5F6FA] text-[16px] h-[52px] flex justify-center  align-middle items-center rounded-[10px]"
+          onClick={() => {
+            setOpen && setOpen(false);
+          }}
+        >
+          Thoát
+        </p>
+      )}
     </div>
   );
 };

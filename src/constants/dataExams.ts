@@ -21,6 +21,24 @@ import {
   XrayWhiteIcon,
 } from "@/assets/svg";
 
+export const dataStatuses = [
+  {
+    key: "1",
+    value: "waiting",
+    label: "Chờ xác nhận",
+  },
+  {
+    key: "2",
+    value: "confirmed",
+    label: "Đã xác nhận",
+  },
+  {
+    key: "3",
+    value: "complete",
+    label: "Hoàn thành",
+  },
+];
+
 export const dataDate = [
   {
     key: 1,
@@ -564,5 +582,48 @@ export const dataHealthIndexes = [
     desc: "Không có giá trị",
     icon: BodyRunIcon,
     path: "/ho-so-suc-khoe/chi-so-suc-khoe/hoat-dong",
+  },
+];
+
+export const dataMedicalHistory = [
+  {
+    key: "1",
+    title: "Trung tâm xét nghiệm GreenLab",
+    date: "15/03/2021",
+    time: "13:30 - 14:00",
+    user: "Tăng Thị Lương (tôi)",
+    department: "Khám nội tổng quát",
+    address: "35 Lê Văn Thiêm, Thanh Xuân, Hà Nội",
+    status: "waiting",
+  },
+  {
+    key: "2",
+    title: "Trung tâm xét nghiệm GreenLab",
+    date: "15/03/2021",
+    time: "13:30 - 14:00",
+    user: "Tăng Thị Lương (tôi)",
+    department: "Khám nội tổng quát",
+    address: "35 Lê Văn Thiêm, Thanh Xuân, Hà Nội",
+    status: "confirmed",
+  },
+  {
+    key: "3",
+    title: "Trung tâm xét nghiệm GreenLab",
+    date: "15/03/2021",
+    time: "13:30 - 14:00",
+    user: "Tăng Thị Lương (tôi)",
+    department: "Khám nội tổng quát",
+    address: "35 Lê Văn Thiêm, Thanh Xuân, Hà Nội",
+    status: "complete",
+  },
+  {
+    key: "4",
+    title: "Trung tâm xét nghiệm GreenLab",
+    date: "15/03/2021",
+    time: "13:30 - 14:00",
+    user: "Tăng Thị Lương (tôi)",
+    department: "Khám nội tổng quát",
+    address: "35 Lê Văn Thiêm, Thanh Xuân, Hà Nội",
+    status: "waiting",
   },
 ];

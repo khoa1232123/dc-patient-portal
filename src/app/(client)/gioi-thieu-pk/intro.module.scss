@@ -1,0 +1,23 @@
+.main {
+  padding-top: 86px;
+  background: #F5F6FA;
+  height: 100%;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 33.6px;
+    color: #121831;
+  }
+  :global(.ant-btn-variant-solid) {
+    background: linear-gradient(239.52deg, #5CDAE8 -4.24%, #547BFE 50.45%);
+    border-color: transparent;
+  }
+}
+
+.content {}

@@ -1,11 +1,10 @@
 
-import Appointment from "@/containers/Appointment";
-import React from "react";
+import HoSoSk from "@/containers/HoSoSk";
 
 type Props = {};
 
 const QuickAppointmentPage = (props: Props) => {
-  return <Appointment />;
+  return <HoSoSk  />;
 };
 
 export default QuickAppointmentPage;

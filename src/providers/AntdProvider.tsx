@@ -1,7 +1,9 @@
+"use client";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ConfigProvider } from "antd";
 import viVN from "antd/locale/vi_VN";
 import type { ThemeConfig } from "antd";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 const AntdProvider = ({
   children,
@@ -53,7 +55,9 @@ const AntdProvider = ({
   return (
     <AntdRegistry>
       <ConfigProvider theme={theme} locale={viVN}>
+        <AuthProvider>
         {children}
+        </AuthProvider>
       </ConfigProvider>
     </AntdRegistry>
   );

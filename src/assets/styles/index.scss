@@ -1,10 +1,16 @@
-// body {
-  // utils
-  @import "./utils";
+//mixin
+@import "./mixin";
 
-  // layout
-  @import "./layout";
+// utils
+@import "./utils";
 
-  // page
-  @import "./appointment";
+// layout
+@import "./layout";
+
+// page
+@import "./appointment";
+@import "./login";
+@import "./home";
+@import "./hososuckhoe";
+@import "./lichsukcb";
 // }

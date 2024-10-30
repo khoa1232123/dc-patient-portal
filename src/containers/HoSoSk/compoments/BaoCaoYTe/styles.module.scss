@@ -1,0 +1,79 @@
+.wrap-container {
+    .header {
+        @apply flex flex-col items-center mb-6;
+        .header-icon {
+            @apply  w-[72px] h-[72px] bg-[#FFA24C] rounded-full flex items-center justify-center content-center;
+
+            svg {
+                @apply w-[50px] h-[90px] text-4xl;
+            }
+        }
+
+        h3 {
+            font-weight: 600;
+            font-size: 32px;
+            color: #121831;
+        }
+
+        h4 {
+            font-weight: 500;
+            font-size: 16px;
+            color: #868CAA;
+        }
+    }
+
+    .heading {
+        background: linear-gradient(115.17deg, #5DE1E7 -18.74%, #2F75FE 91.51%);
+        -webkit-background-clip: text; // Chỉ định phần nền áp dụng cho chữ
+        -webkit-text-fill-color: transparent;
+        font-size: 20px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+       
+    }
+    h2 {
+        background-color: #F5F6FA;
+        padding: 8px 12px;
+        border-radius: 6px;
+    }
+}
+
+.thong-tin-kham {
+    width: 100%;
+    display: flex;
+    padding: 12px 0px;
+    font-size: 16px;
+
+    .thong-tin-kham__left {
+        width: 100%;
+        flex: 1;
+    }
+    .thong-tin-kham__right {
+        padding: 24px;
+        width: 261px;
+        border-radius: 10px;
+        background-color: #F5F6FA;
+    }
+}
+
+.item-1,.item-3, .thong-tin-kham__left {
+    @apply text-[#121831] text-[16px];
+
+    span {
+        @apply font-semibold mr-[13px] text-[16px];
+    }
+}
+
+.thong-tin-kham__right {
+    @apply text-[16px];;
+}
+
+.item-2 {
+    @apply text-[#121831];
+
+    span {
+        @apply font-semibold mr-[13px];
+    }
+}

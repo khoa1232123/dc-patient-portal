@@ -1,0 +1,238 @@
+.login-layout {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.login-page {
+  min-height: 100vh;
+  padding-top: 86px;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  &__left {
+    padding: 24px 84px;
+    height: calc(100vh - 86px);
+  }
+}
+
+.login-intro {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  height: 100%;
+}
+
+.slider-intro {
+  height: 120px;
+  margin: auto;
+
+  &__item {
+    max-width: 477px;
+    h3 {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 32.81px;
+      text-align: center;
+      color: white;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 21.09px;
+      text-align: center;
+      color: white;
+    }
+  }
+
+  .slick-dots {
+    li {
+      width: 21px !important;
+
+      &.slick-active {
+        width: 47px !important;
+      }
+    }
+  }
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 0;
+
+  &__item {
+    border-radius: 33px;
+    background: #ffffff;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    min-height: 190px;
+
+    h4 {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 21.09px;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 4px;
+      max-width: 155px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 18.75px;
+      text-align: center;
+    }
+
+    &__img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.download-app {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  &__content {
+    h3 {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 28px;
+      text-align: left;
+      color: white;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      text-align: left;
+      color: white;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 12px;
+
+    &__img {
+      width: 161.13px;
+      height: 58.64px;
+      gap: 0px;
+      border-radius: 15px 0px 0px 0px;
+      opacity: 0px;
+    }
+  }
+}
+
+.login {
+  background-color: #ffffff;
+  height: calc(100vh - 86px);
+  padding: 56px 49px 56px 49px;
+  gap: 24px;
+  opacity: 0px;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 42.19px;
+    text-align: center;
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    &__btn {
+      flex: 50%;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 28px;
+      min-width: auto;
+    }
+  }
+
+  &__otp-again {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__timer {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+
+  &__input-otp {
+    .input-otp {
+      justify-content: space-around;
+      gap: 12px;
+    }
+    .input-otp__field {
+      max-width: none;
+      background: #f6fbff;
+      border-color: transparent;
+      height: 64px;
+    }
+  }
+
+  &__note {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.41px;
+    text-align: center;
+  }
+
+  &__btn-back {
+    .btn-back {
+      @apply p-0 w-[40px] h-[40px] min-w-0 min-h-0 flex justify-center items-center;
+    }
+  }
+}
+
+.login-account,
+.login-otp {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: left;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  &__checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-left: 10px !important;
+
+    .ant-checkbox {
+      align-self: flex-start;
+      margin-top: 4px;
+    }
+  }
+}

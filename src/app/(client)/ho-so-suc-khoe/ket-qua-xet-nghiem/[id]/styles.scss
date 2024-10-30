@@ -1,0 +1,228 @@
+@import "../../../../../assets/styles/mixin";
+.wrap-container {
+  .header {
+    @apply flex flex-col items-center;
+
+    .header-icon {
+      @apply w-[72px] h-[72px] bg-[#FC9AA2] rounded-full flex items-center justify-center content-center;
+
+      svg {
+        @apply w-[50px] h-[90px] text-4xl;
+      }
+    }
+
+    h3 {
+      font-weight: 600;
+      font-size: 32px;
+      color: #121831;
+    }
+
+    h4 {
+      font-weight: 500;
+      font-size: 16px;
+      color: #868caa;
+    }
+  }
+
+  h2 {
+    background-color: #f5f6fa;
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+}
+
+.wrap-table {
+  background-color: #f5f6fa;
+  border-radius: 10px;
+  padding: 24px;
+
+  :global {
+    :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper
+      .ant-table-cell,
+    :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper
+      .ant-table-thead
+      > tr
+      > th,
+    :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper
+      .ant-table-tbody
+      > tr
+      > th,
+    :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper
+      .ant-table-tbody
+      > tr
+      > td,
+    :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper
+      tfoot
+      > tr
+      > th,
+    :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper
+      tfoot
+      > tr
+      > td {
+      padding: 12px 12px;
+    }
+
+    .ant-table-content {
+      background-color: #f5f6fa !important;
+    }
+
+    :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper
+      .ant-table-thead
+      > tr
+      > th,
+    :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper
+      .ant-table-thead
+      > tr
+      > td {
+      background-color: #f5f6fa !important;
+    }
+
+    :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper
+      .ant-table-thead
+      > tr
+      > th:not(:last-child):not(.ant-table-selection-column):not(
+        .ant-table-row-expand-icon-cell
+      ):not([colspan])::before,
+    :where(.css-dev-only-do-not-override-ccdg5a).ant-table-wrapper
+      .ant-table-thead
+      > tr
+      > td:not(:last-child):not(.ant-table-selection-column):not(
+        .ant-table-row-expand-icon-cell
+      ):not([colspan])::before {
+      display: none;
+    }
+  }
+}
+
+.icon {
+  svg {
+    display: unset;
+    font-size: 8px;
+  }
+}
+
+.detail-section {
+  padding-top: 24px;
+  padding-bottom: 36px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 12px;
+
+  &__title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 33.6px;
+    text-align: left;
+  }
+
+  &__content {
+    @include flex(16px);
+    flex-direction: column;
+  }
+
+  &__tabs {
+    width: 100%;
+
+    ul {
+      &.ant-menu-horizontal {
+        border-bottom: none;
+        margin-left: -16px;
+      }
+      li {
+        background-color: transparent !important;
+        padding: 0px;
+        span {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          text-align: left;
+        }
+        &.ant-menu-item-selected {
+          span {
+            @include textGradient;
+          }
+        }
+      }
+    }
+  }
+
+  &__tab-content {
+    width: 100%;
+  }
+
+  .kqxn {
+    @include flex(12px);
+    flex-direction: column;
+    width: 100%;
+
+    &__top {
+      @include boxPage(15px, 12px 24px);
+      @include flex(0px, space-between);
+      width: 100%;
+
+      &__title {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+        text-align: left;
+        color: #333;
+      }
+
+      &__content {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        color: #121831;
+      }
+
+      &__btn {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: left;
+      }
+    }
+
+    &__content {
+      width: 100%;
+      @include boxPage(10px, 12px 24px);
+      max-width: 100%;
+    }
+
+    &__table {
+      tr {
+        th {
+          font-size: 20px !important;
+          font-weight: 500;
+          line-height: 28px;
+          text-align: left;
+          border: none !important;
+
+          &::before {
+            display: none;
+          }
+        }
+        &.parent {
+          background-color: #f5f6fa !important;
+          cursor: pointer;
+          td {
+            border: none !important;
+            border-radius: 10px !important;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            text-align: left;
+          }
+        }
+        &.children {
+          td {
+            border: none !important;
+            padding: 6px 16px;
+          }
+        }
+      }
+    }
+  }
+}

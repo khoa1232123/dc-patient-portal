@@ -26,7 +26,7 @@ const DetailLayout = ({ children }: Props) => {
     <div
       className={`detail-layout ${
         !logged ? " -mt-[86px]" : ""
-      } bg-[#F5F6FA] min-h-[100vh]`}
+      } bg-[#F5F6FA]`}
     >
       {logged && (
         <div

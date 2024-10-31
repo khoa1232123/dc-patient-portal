@@ -7,11 +7,13 @@ type Props = DetailedHTMLProps<
   variant?: "normal" | "outline" | "none";
   className?: string;
   children: React.ReactNode;
+  icon?: React.ReactNode;
 };
 
-const ButtonCustom = ({ variant = "normal", className = "",children, ...props }: Props) => {
+const ButtonCustom = ({ variant = "normal", className = "", icon, children, ...props }: Props) => {
   return (
     <button className={`base-btn ${className} ${variant}`} {...props}>
+      {icon}
       <span>{children}</span>
     </button>
   );

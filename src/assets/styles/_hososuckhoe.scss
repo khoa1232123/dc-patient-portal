@@ -67,3 +67,211 @@
     }
   }
 }
+
+.health-modal {
+  &__wrapper {
+    @include flex(8px);
+    flex-direction: column;
+  }
+  &__top {
+    @include flex;
+    flex-direction: column;
+  }
+  &__box {
+    @include bgGradient;
+    @include flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 20px;
+    padding: 12px;
+    color: white;
+
+    &__input {
+      @include flex;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 28px;
+      text-align: left;
+
+      .ant-form-item {
+        margin-bottom: 0;
+      }
+
+      input {
+        min-width: 0px;
+        font-weight: 500;
+        width: 150px;
+        padding: 0px;
+        height: 60px;
+        font-size: 56px;
+        color: white;
+        text-align: center;
+        background: transparent;
+        border: 0px;
+        &:hover,
+        &:focus {
+          background: transparent;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        &[type="number"] {
+          -moz-appearance: textfield;
+        }
+      }
+    }
+  }
+  &__content {
+    @include flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__custom-label {
+    @include flex(0, space-between);
+    color: #868caa;
+  }
+}
+
+.cssk-detail {
+  padding-top: 24px;
+  padding-bottom: 48px;
+  &__header {
+    @include flex(10px, space-between);
+    margin-bottom: 24px;
+  }
+  &__title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 33.6px;
+    text-align: left;
+  }
+
+  &__right {
+    @include flex(12px, end);
+    flex: 1;
+  }
+  &__filter {
+    height: 52px;
+    @include flex(12px);
+    border-radius: 10px;
+    padding: 0 10px;
+    background: #fff;
+    width: 390px;
+
+    .ant-menu-overflow {
+      line-height: 36px;
+      border: none;
+      width: 100% !important;
+
+      li {
+        background: transparent;
+        &:after {
+          display: none;
+        }
+
+        &:hover,
+        &.ant-menu-item-selected {
+          background: #f5f6fa;
+          &:hover {
+            background: #f5f6fa;
+          }
+        }
+      }
+    }
+  }
+  &__btn {
+    @include bgGradient;
+  }
+
+  &__chart {
+    @include boxPage;
+    background: #fff;
+  }
+  &__box {
+    color: white;
+    @include boxPage;
+    @include bgGradient;
+    @include flex(12px);
+    flex-direction: column;
+    min-height: 100%;
+
+    &__title {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 28px;
+      text-align: left;
+    }
+
+    &__text {
+      @include flex;
+      flex-direction: column;
+    }
+
+    &__box {
+      @include flex(4px);
+    }
+
+    &__value {
+      font-size: 56px;
+      font-weight: 600;
+      line-height: 67.2px;
+      text-align: left;
+    }
+
+    &__unit {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 28px;
+      text-align: left;
+    }
+
+    &__last {
+      width: 100%;
+      @include flex(4px, space-between);
+      background-color: #ffffff33;
+      padding: 12px;
+      border-radius: 10px;
+    }
+  }
+
+  &__box-desc {
+    @include boxPage;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    p {
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  &__news {
+    margin-top: 20px;
+
+    &__item {
+      @include boxPage;
+      @include flex(12px, start, start);
+      flex-direction: column;
+      height: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+    &__title {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 33.6px;
+      text-align: left;
+    }
+  }
+}

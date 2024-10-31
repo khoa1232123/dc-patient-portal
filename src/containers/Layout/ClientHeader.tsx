@@ -85,7 +85,7 @@ const ClientHeader = ({ className = "" }: Props) => {
           <>
             <div className="client-header__btn lg-none">
               <button
-                className="base-btn !h-[42px]"
+                className="base-btn small"
                 onClick={() => setLogged(false)}
               >
                 Tải ứng dụng
@@ -165,7 +165,7 @@ const ClientHeader = ({ className = "" }: Props) => {
         />
         <div className="client-header__btn">
           <button
-            className="base-btn !h-[42px] w-full mt-4"
+            className="base-btn small w-full mt-4"
             onClick={() => setLogged(false)}
           >
             Tải ứng dụng

@@ -62,3 +62,6 @@ export { default as BodyHeightIcon } from "./bodyHeight.svg";
 export { default as BodyNormalIcon } from "./bodyNormal.svg";
 export { default as BodyRunIcon } from "./bodyRun.svg";
 export { default as HeartIcon } from "./heart.svg";
+
+export { default as Calling } from "./Calling.svg";
+export { default as Location } from "./Location.svg";

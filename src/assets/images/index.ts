@@ -18,3 +18,6 @@ export { default as CDHA01Image } from "./CDHA01.png";
 export { default as CDHA02Image } from "./CDHA02.png";
 export { default as CDHA03Image } from "./CDHA03.png";
 export { default as CDHA04Image } from "./CDHA04.png";
+
+export { default as Video } from "./video.png";
+export { default as Map } from "./map.png";

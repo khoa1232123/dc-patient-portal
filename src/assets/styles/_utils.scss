@@ -1,14 +1,24 @@
 .base-btn {
-  height: 56px;
+  height: 52px;
   min-width: 170px;
   padding: 12px 24px;
-  background: linear-gradient(115.17deg, #5de1e7 -18.74%, #2f75fe 91.51%);
+  @include bgGradient;
   border: none;
   border-radius: 10px;
   font-weight: 600;
   font-size: 18px;
   line-height: 1;
   color: #ffffff;
+  @include flex(4px);
+
+  &.small {
+    height: 42px;
+    font-size: 16px;
+  }
+
+  &.large {
+    height: 56px;
+  }
 
   &.outline {
     background: transparent;
@@ -49,6 +59,12 @@
 
 .base-input {
   margin-bottom: 0;
+
+  &__desc {
+    width: 100%;
+    margin-bottom: 8px;
+    margin-top: -8px;
+  }
 
   &__add-before {
     margin-bottom: 0;

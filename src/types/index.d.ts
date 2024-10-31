@@ -3,3 +3,25 @@ type OptionProps = {
   label: string;
   [key: string]: any;
 };
+
+type NewsProps = {
+  title: string;
+  desc: string;
+  image?: StaticImageData | string;
+}
+
+type HealthIndexProps = {
+  key: string;
+  title: string;
+  value: string;
+  unit: string;
+  desc: string;
+  icon: any;
+  colorIcon?: string;
+  path: string;
+  moreData?: {
+    title: string;
+    desc: string;
+    news?: NewsProps[]
+  }
+};

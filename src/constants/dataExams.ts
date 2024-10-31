@@ -1,4 +1,4 @@
-import { doctor1Image, doctor2Image, doctor3Image } from "@/assets/images";
+import { HeartRate01Image, HeartRate02Image, HeartRate03Image, doctor1Image, doctor2Image, doctor3Image } from "@/assets/images";
 import {
   AIColorIcon,
   AmbulatoryIcon,
@@ -537,51 +537,78 @@ export const dataMenuFooter = [
   },
 ];
 
-export const dataHealthIndexes = [
+export const dataHealthIndexes: HealthIndexProps[] = [
   {
-    key: "1",
+    key: "weight",
     title: "Cân nặng",
     value: "56.6",
     unit: "kg",
     desc: "Không có giá trị",
     icon: BodyFatIcon,
     path: "/ho-so-suc-khoe/chi-so-suc-khoe/can-nang",
+    colorIcon: "#5591F8",
   },
   {
-    key: "2",
+    key: "height",
     title: "Chiều cao",
-    value: "16.8",
-    unit: "mét",
+    value: "168",
+    unit: "cm",
     desc: "Không có giá trị",
     icon: BodyHeightIcon,
     path: "/ho-so-suc-khoe/chi-so-suc-khoe/chieu-cao",
+    colorIcon: "#9355F8"
   },
   {
-    key: "3",
+    key: "body-index",
     title: "Chỉ số cơ thể",
-    value: "16.8",
-    unit: "mét",
+    value: "168",
+    unit: "cm",
     desc: "Không có giá trị",
     icon: BodyNormalIcon,
     path: "/ho-so-suc-khoe/chi-so-suc-khoe/chi-so-co-the",
+    colorIcon: "#FF9737"
   },
   {
-    key: "4",
+    key: "heart-rate",
     title: "Nhịp tim",
     value: "168",
-    unit: "Nhịp/phút",
+    unit: "BPM",
     desc: "Không có giá trị",
     icon: HeartIcon,
     path: "/ho-so-suc-khoe/chi-so-suc-khoe/nhip-tim",
+    colorIcon: "#FF7F7F",
+    moreData: {
+      title: "Giới thiệu về nhịp tim",
+      desc: `<p>Nhịp tim của bạn đập khoảng 100.000 lần mỗi ngày, tăng và giảm tốc độ trong các khoảng thời gian gắng sức và nghỉ ngơi. Nhịp tim là số làn mà tm của bạn đập trong mỗi phút và được sử dụng như là một chỉ báo về sức khoẻ tim mạch của bạn.</p>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur</p>`,
+      news: [
+        {
+          title: "Thể chất tim mạch thấp có ý nghĩa như thế nào",
+          desc: "Và bạn có thể làm gì trong trường hợp đó",
+          image: HeartRate01Image,
+        },
+        {
+          title: "Tìm hiểu về thể chất tim mạch",
+          desc: "Tìm hiểu xem nhịp tim cao hoặc thấp có ý nghĩa như thế nào ",
+          image: HeartRate02Image,
+        },
+        {
+          title: "Tìm hiểu về nhịp tim của bạn",
+          desc: "Tìm hiểu xem nhịp tim cao hoặc thấp có ý nghĩa như thế nào ",
+          image: HeartRate03Image,
+        },
+      ]
+    }
   },
   {
-    key: "5",
+    key: "activity",
     title: "Hoạt động",
     value: "10",
     unit: "Km",
     desc: "Không có giá trị",
     icon: BodyRunIcon,
     path: "/ho-so-suc-khoe/chi-so-suc-khoe/hoat-dong",
+    colorIcon: "#78CCAE"
   },
 ];
 

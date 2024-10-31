@@ -11,6 +11,7 @@ type Props = FormItemProps & {
   classInput?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   type?: string;
+  desc?: React.ReactNode;
 };
 
 const InputCustom = ({
@@ -23,6 +24,7 @@ const InputCustom = ({
   classInput = "",
   onChange,
   type,
+  desc,
   ...restProps
 }: Props) => {
   return (
@@ -34,6 +36,9 @@ const InputCustom = ({
       name={name}
       {...restProps}
     >
+      {desc && (
+        <div className="base-input__desc">{desc}</div>
+      )}
       {addBefore && <div className="add-before">{addBefore}</div>}
       <Input
         type={type}

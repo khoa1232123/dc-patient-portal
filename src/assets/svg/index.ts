@@ -81,3 +81,8 @@ export { default as OdontologyIcon } from "./odontology.svg";
 export { default as BloodPressureIcon } from "./blood_pressure.svg";
 // fill="#F09F25"
 export { default as HealthDataIcon } from "./health_data.svg";
+
+
+export { default as ImageIcon } from "./Image.svg";
+export { default as CameraIcon } from "./Camera.svg";
+export { default as MoreIcon } from "./More.svg";

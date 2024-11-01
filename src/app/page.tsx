@@ -1,5 +1,6 @@
 "use client";
 import ScrollToTop from "@/components/ScrollToTop";
+import VirtualAssistant from "@/components/VirtualAssistant";
 import Home from "@/containers/Home";
 import { ClientFooter, ClientHeader } from "@/containers/Layout";
 import { Spin } from "antd";
@@ -17,7 +18,8 @@ export default function HomePage() {
       <ClientHeader logged />
       <Home />
       <ClientFooter />
-        <ScrollToTop />
+      <ScrollToTop />
+      <VirtualAssistant />
     </Spin>
   );
 }

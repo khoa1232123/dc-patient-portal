@@ -1,7 +1,7 @@
 "use client";
 import ScrollToTop from "@/components/ScrollToTop";
+import VirtualAssistant from "@/components/VirtualAssistant";
 import { ClientFooter, ClientHeader } from "@/containers/Layout";
-import { AppointmentProvider, useAppointmentContext } from "@/contexts/AppointmentContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { Spin } from "antd";
 import React, { useEffect, useState } from "react";
@@ -26,6 +26,7 @@ const ClientLayout = ({ children }: Props) => {
           <ClientFooter />
         </Spin>
         <ScrollToTop />
+        <VirtualAssistant />
       </AuthProvider>
     </>
   );

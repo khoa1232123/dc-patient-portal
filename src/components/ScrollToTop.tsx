@@ -34,19 +34,6 @@ const ScrollToTop: React.FC = () => {
       className={`scroll-to-top duration-200 ${
         isVisible ? "visible opacity-100" : "invisible opacity-0"
       }`}
-      style={{
-        position: "fixed",
-        bottom: "50px",
-        right: "50px",
-        padding: "12px",
-        backgroundColor: "#fff",
-        color: "white",
-        border: "none",
-        borderRadius: "25px",
-        cursor: "pointer",
-        zIndex: 1000,
-        boxShadow: "0px 4px 20px 0px #00000020",
-      }}
     >
       <ArrowUpIcon width={24} height={24} />
     </button>

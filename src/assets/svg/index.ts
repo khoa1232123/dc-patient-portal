@@ -62,3 +62,22 @@ export { default as BodyHeightIcon } from "./bodyHeight.svg";
 export { default as BodyNormalIcon } from "./bodyNormal.svg";
 export { default as BodyRunIcon } from "./bodyRun.svg";
 export { default as HeartIcon } from "./heart.svg";
+
+export { default as Calling } from "./Calling.svg";
+export { default as Location } from "./Location.svg";
+
+// icon services
+// fill="#5CE1E6"
+export { default as SyringeVaccineIcon } from "./syringe-vaccine.svg";
+// fill="#F48686"
+export { default as Baby2Icon } from "./baby_2.svg";
+// fill="#FFCB13"
+export { default as AncvIcon } from "./ancv.svg";
+// fill="#4065E7"
+export { default as VirusLabIcon } from "./virus_lab.svg";
+// fill="#64B300"
+export { default as OdontologyIcon } from "./odontology.svg";
+// fill="#EF4343"
+export { default as BloodPressureIcon } from "./blood_pressure.svg";
+// fill="#F09F25"
+export { default as HealthDataIcon } from "./health_data.svg";

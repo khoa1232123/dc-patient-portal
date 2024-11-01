@@ -19,6 +19,8 @@ export { default as CDHA02Image } from "./CDHA02.png";
 export { default as CDHA03Image } from "./CDHA03.png";
 export { default as CDHA04Image } from "./CDHA04.png";
 
+export { default as Video } from "./video.png";
+export { default as Map } from "./map.png";
 export { default as HeartRate01Image } from "./heart-rate-01.png";
 export { default as HeartRate02Image } from "./heart-rate-02.png";
 export { default as HeartRate03Image } from "./heart-rate-03.png";

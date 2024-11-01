@@ -1,6 +1,7 @@
 "use client";
 import { appointmentBg } from "@/assets/images";
 import { useAuthContext } from "@/contexts/AuthContext";
+import Link from "next/link";
 import React from "react";
 
 type Props = {
@@ -16,7 +17,8 @@ const AppointmentLayout = ({ children }: Props) => {
     >
       {logged && (
         <div className="breakcrumb">
-          <div className="wrapper">Trang chủ &gt; Đặt khám nhanh</div>
+          <div className="wrapper">
+            <Link href={"/"}>Trang chủ</Link> &gt; Đặt khám nhanh</div>
         </div>
       )}
       {children}

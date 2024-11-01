@@ -7,6 +7,7 @@ import {
 } from "@/assets/svg";
 import { ButtonCustom } from "@/components";
 import { dataMyClinics } from "@/constants/dataExams";
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -27,7 +28,9 @@ const MyClinic = (props: Props) => {
                   <span className="my-clinic__item__space">{item.space}</span>
                 </div>
                 <div className="my-clinic__item__content">
-                  <h3>{item.label}</h3>
+                  <Link href={"/gioi-thieu-pk"}>
+                    <h3>{item.label}</h3>
+                  </Link>
                   <p>
                     <LocationPointIcon width={12} height={12} />
                     {item.address}

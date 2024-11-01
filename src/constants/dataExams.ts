@@ -1,8 +1,18 @@
-import { HeartRate01Image, HeartRate02Image, HeartRate03Image, doctor1Image, doctor2Image, doctor3Image } from "@/assets/images";
+import {
+  HeartRate01Image,
+  HeartRate02Image,
+  HeartRate03Image,
+  doctor1Image,
+  doctor2Image,
+  doctor3Image,
+} from "@/assets/images";
 import {
   AIColorIcon,
   AmbulatoryIcon,
+  AncvIcon,
+  Baby2Icon,
   BabyIcon,
+  BloodPressureIcon,
   BodyFatIcon,
   BodyHeightIcon,
   BodyIcon,
@@ -12,12 +22,16 @@ import {
   CalendarBlueIcon,
   ClinicalIcon,
   DoctorIcon,
+  HealthDataIcon,
   HeartIcon,
   Logo2SVG,
   MedicinesWhiteIcon,
+  OdontologyIcon,
   PregnantIcon,
+  SyringeVaccineIcon,
   TestTubeIcon,
   TestTubeWhiteIcon,
+  VirusLabIcon,
   XrayWhiteIcon,
 } from "@/assets/svg";
 
@@ -556,7 +570,7 @@ export const dataHealthIndexes: HealthIndexProps[] = [
     desc: "Không có giá trị",
     icon: BodyHeightIcon,
     path: "/ho-so-suc-khoe/chi-so-suc-khoe/chieu-cao",
-    colorIcon: "#9355F8"
+    colorIcon: "#9355F8",
   },
   {
     key: "body-index",
@@ -566,7 +580,7 @@ export const dataHealthIndexes: HealthIndexProps[] = [
     desc: "Không có giá trị",
     icon: BodyNormalIcon,
     path: "/ho-so-suc-khoe/chi-so-suc-khoe/chi-so-co-the",
-    colorIcon: "#FF9737"
+    colorIcon: "#FF9737",
   },
   {
     key: "heart-rate",
@@ -597,8 +611,8 @@ export const dataHealthIndexes: HealthIndexProps[] = [
           desc: "Tìm hiểu xem nhịp tim cao hoặc thấp có ý nghĩa như thế nào ",
           image: HeartRate03Image,
         },
-      ]
-    }
+      ],
+    },
   },
   {
     key: "activity",
@@ -608,7 +622,7 @@ export const dataHealthIndexes: HealthIndexProps[] = [
     desc: "Không có giá trị",
     icon: BodyRunIcon,
     path: "/ho-so-suc-khoe/chi-so-suc-khoe/hoat-dong",
-    colorIcon: "#78CCAE"
+    colorIcon: "#78CCAE",
   },
 ];
 
@@ -653,4 +667,120 @@ export const dataMedicalHistory = [
     address: "35 Lê Văn Thiêm, Thanh Xuân, Hà Nội",
     status: "waiting",
   },
+];
+
+export const dataClinicServiceList = [
+  {
+    key: "1",
+    title: "Tiêm phòng Vaccine",
+    colorPrimary: "#5CE1E6",
+    colorSecond: "#5CE1E61A",
+    icon: SyringeVaccineIcon,
+    children: [
+      "Tiêm phòng Vaccine Covid-19",
+      "Tiêm phòng Vaccine Hepatitis B",
+      "Tiêm phòng Vaccine Hepatitis C",
+      "Tiêm phòng Vaccine SARS-CoV-2",
+      "Tiêm phòng Vaccine Varicella",
+      "Tiêm phòng Vaccine HIV",
+    ],
+  },
+  {
+    key: "2",
+    title: "Nhi",
+    colorPrimary: "#F48686",
+    colorSecond: "#F486861A",
+    icon: Baby2Icon,
+    children: [
+      "Khám trẻ đi học",
+      "Khám nhi tổng quát",
+      "Kiểm tra sức khoẻ sơ sinh",
+      "Khám trẻ nhỏ",
+      "Khám trẻ lớn (3 - 15 tuổi)",
+      "Khám dị ứng và hen suyễn",
+    ],
+  },
+  {
+    key: "3",
+    title: "Sản khoa",
+    colorPrimary: "#FFCB13",
+    colorSecond: "#FFCB131A",
+    icon: AncvIcon,
+    children: [
+      "Khám sản khoa",
+      "Điều trị bệnh",
+      "Khám sản khoa chuyên khoa",
+      "Thăm khám sản khoa",
+      "Chẩn đoán bệnh",
+      "Chăm sóc sức sau sinh",
+    ],
+  },
+  {
+    key: "4",
+    title: "Xét nghiệm",
+    colorPrimary: "#4065E7",
+    colorSecond: "#4065E71A",
+    icon: VirusLabIcon,
+    children: [
+      "Xét nghiệm tử thiết",
+      "Xét nghiệm nội tổng quát",
+      "Xét nghiệm máu",
+      "Xét nghiệm sinh hoá",
+      "Xét nghiệm sức khoẻ",
+      "Xét nghiệm truyền nhiễm",
+    ],
+  },
+  {
+    key: "5",
+    title: "Răng hàm mặt",
+    colorPrimary: "#64B300",
+    colorSecond: "#64B3001A",
+    icon: OdontologyIcon,
+    children: ["Răng hàm mặt", "Nhổ răng", "Hàn răng", "Nẹp răng"],
+  },
+  {
+    key: "6",
+    title: "Tim mạch",
+    colorPrimary: "#EF4343",
+    colorSecond: "#EF43431A",
+    icon: BloodPressureIcon,
+    children: [
+      "Khám tim mạch",
+      "Thăm khám tim mạch",
+      "Chẩn đoán tim mạch",
+      "Khám sức khoẻ tim mạch",
+      "Thăm khám tim mạch chuyên khoa",
+      "Thăm khám tim mạch đa khoa",
+    ],
+  },
+  {
+    key: "7",
+    title: "Nội khoa",
+    colorPrimary: "#F09F25",
+    colorSecond: "#F09F251A",
+    icon: HealthDataIcon,
+    children: [
+      "Khám nội khoa",
+      "Điều trị bệnh",
+      "Thăm khám nội khoa",
+      "Chẩn đoán bệnh",
+      "Thăm khám nội khoa chuyên khoa",
+      "Thăm khám nội khoa đa khoa",
+    ],
+  },
+  {
+    key: "8",
+    title: "Y tế",
+    colorPrimary: "#2196F3",
+    colorSecond: "#2196F31A",
+    icon: HealthDataIcon,
+    children: [
+      "Khám y tế",
+      "Điều trị bệnh",
+      "Thăm khám y tế",
+      "Chẩn đoán bệnh",
+      "Thăm khám y tế chuyên khoa",
+      "Thăm khám y tế đa khoa",
+    ],
+  }
 ];

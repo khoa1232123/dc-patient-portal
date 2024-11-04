@@ -51,6 +51,7 @@ export { default as HospitalIcon } from "./hospital.svg";
 export { default as HospitalWhiteIcon } from "./hospitalWhite.svg";
 export { default as BlisterPillOvalIcon } from "./BlisterPillOval.svg";
 export { default as DocumentOrangeIcon } from "./DocumentOrange.svg";
+export { default as DocumentBlueIcon } from "./DocumentBlue.svg";
 export { default as FolderColorIcon } from "./FolderColor.svg";
 export { default as ArrowFromRightIcon } from "./ArrowFromRight.svg";
 export { default as ArrowUpIcon } from "./ArrowUp.svg";

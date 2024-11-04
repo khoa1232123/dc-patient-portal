@@ -25,3 +25,12 @@ type HealthIndexProps = {
     news?: NewsProps[]
   }
 };
+
+interface DocManagementType {
+  key: React.Key;
+  name: string;
+  date: string;
+  author: string;
+  type: string;
+  file?: string;
+}

@@ -328,7 +328,7 @@ export const dataMenu2 = [
   {
     key: "/quan-ly-tai-lieu",
     label: "Quản lý tài liệu",
-    link: "#",
+    link: "/quan-ly-tai-lieu",
   },
 ];
 
@@ -782,5 +782,19 @@ export const dataClinicServiceList = [
       "Thăm khám y tế chuyên khoa",
       "Thăm khám y tế đa khoa",
     ],
-  }
+  },
 ];
+
+export const dataDocManagements = Array.from<DocManagementType>({
+  length: 46,
+}).map<DocManagementType>((_, i) => ({
+  key: i + 1,
+  name: `Giấy chứng nhận sàng lọc Covid ${i + 1}`,
+  date: "12/12/2021",
+  author: `Alan Hạnh Nguyễn`,
+  type: "Giấy chứng nhận y tế",
+  file:
+    i % 2
+      ? "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+      : "https://storage-vnportal.vnpt.vn/cbg-ubnd/sitefolders/root/3366/demo.pdf",
+}));

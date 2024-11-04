@@ -1,0 +1,198 @@
+.document-management {
+  padding-top: 24px;
+  background: #f5f6fa;
+  padding-bottom: 40px;
+  &__header {
+    @include boxPage;
+    @include flex(24px, space-between);
+
+    &__icon {
+      @include flex;
+      min-width: 95px;
+      height: 95px;
+      border-radius: 100px;
+      background: #f5f6fa;
+    }
+    &__content {
+      h1 {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 33.6px;
+        text-align: left;
+        margin-bottom: 8px;
+      }
+      p {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 23.44px;
+        text-align: left;
+        font-variation-settings: "wdth" 100;
+      }
+    }
+
+    &__btn {
+      width: 270px;
+      @include flex;
+    }
+  }
+
+  &__filter {
+    @include flex(12px);
+
+    &__text {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 28px;
+      text-align: left;
+    }
+    &__select {
+      flex: 1;
+      &.base-select .ant-select .ant-select-selector {
+        background-color: #fff !important;
+      }
+    }
+  }
+
+  &__modal {
+    @include flex(24px);
+    flex-direction: column;
+    height: 280px;
+
+    &__title {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 33.6px;
+      text-align: center;
+    }
+
+    &__content {
+      @include flex(24px);
+
+      &__item {
+        @include flex(10px);
+        flex-direction: column;
+        background: #f5f6fa;
+        width: 160px;
+        height: 160px;
+        border-radius: 10px;
+
+        p {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  &__table {
+    table {
+      thead {
+        tr:first-child > *:first-child {
+          border-bottom-left-radius: 10px;
+        }
+        tr:first-child > *:last-child {
+          border-bottom-right-radius: 10px;
+        }
+      }
+      background-color: #f5f6fa;
+      tbody {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+
+        tr:first-child > *:first-child {
+          border-top-left-radius: 10px;
+        }
+        tr:first-child > *:last-child {
+          border-top-right-radius: 10px;
+        }
+        tr:last-child > *:first-child {
+          border-bottom-left-radius: 10px;
+        }
+        tr:last-child > *:last-child {
+          border-bottom-right-radius: 10px;
+        }
+      }
+    }
+    .ant-table-thead {
+      margin-bottom: 20px;
+      tr {
+        margin-bottom: 20px;
+      }
+    }
+
+    .ant-table-header {
+      table:before {
+        line-height: 0.75rem;
+        content: "-";
+        display: block;
+        color: transparent;
+      }
+    }
+
+    .ant-pagination {
+      .ant-pagination-options {
+        order: -1;
+        flex: 1;
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+.doc-detail {
+  padding: 24px 0px 48px;
+  &__title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 38.4px;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  &__content {
+    @include boxPage;
+    @include flex(12px, start, start);
+    flex-direction: column;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 33.6px;
+      text-align: left;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      text-align: left;
+      color: #868caa;
+
+      span {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+        text-align: left;
+        color: #121831;
+      }
+    }
+
+    &__btn-edit {
+      &.base-btn {
+        background: none !important;
+
+        span {
+          @include textGradient;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
